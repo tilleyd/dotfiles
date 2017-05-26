@@ -1,0 +1,7 @@
+TOGGLE=$HOME/.touchpad
+
+if [ ! -e $TOGGLE ]; then
+	synclient TouchpadOff=0
+else
+	synclient TouchpadOff=1
+fi

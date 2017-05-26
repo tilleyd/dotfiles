@@ -1,0 +1,27 @@
+# ~/.bashrc
+# Created by Paradime
+
+# As usual, if not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# Some nice color aliases
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+# And some useful (or lazy) aliases
+alias sudo='sudo '
+alias g++='g++ -std=c++11'
+alias install='apt install'
+alias remove='apt remove --purge'
+alias autoremove='apt autoremove --purge'
+alias update='apt update'
+alias upgrade='apt dist-upgrade'
+
+# Make the prompt look badass
+export PS1="\[\e[1;90m\]┌─ \[\e[1;94m\]\u\[\e[1;90m\] ── \[\e[1;94m\]\w\[\e[1;90m\] ─\n\[\e[1;90m\]└─▶\[\e[0m\] "
+
+# Possibly a date on startup, I mean if you really want it
+#echo `date`

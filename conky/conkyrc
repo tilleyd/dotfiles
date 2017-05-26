@@ -1,0 +1,80 @@
+background no
+font Hack:size=9
+use_xft yes
+xftalpha 0.9
+update_interval 3.0
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 220 5
+maximum_width 220
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color white
+default_shade_color black
+default_outline_color green
+alignment top_right
+gap_x 12
+gap_y 35
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+uppercase yes # set to yes if you want all text to be in uppercase
+
+TEXT
+${color white}SYSTEM ${hr 1}${color}
+
+Hostname: $alignr$nodename
+Kernel: $alignr$kernel
+Uptime: $alignr$uptime
+Temp: ${alignr}${acpitemp}C
+
+CPU: ${alignr}${freq} MHz
+Processes: ${alignr}$processes ($running_processes running)
+Load: ${alignr}$loadavg
+
+CPU1 ${alignr}${cpu cpu1}%
+${cpubar cpu1 4}
+CPU2 ${alignr}${cpu cpu2}%
+${cpubar cpu2 4}
+CPU3 ${alignr}${cpu cpu3}%
+${cpubar cpu3 4}
+CPU4 ${alignr}${cpu cpu4}%
+${cpubar cpu4 4}
+CPU5 ${alignr}${cpu cpu5}%
+${cpubar cpu5 4}
+CPU6 ${alignr}${cpu cpu6}%
+${cpubar cpu6 4}
+CPU7 ${alignr}${cpu cpu7}%
+${cpubar cpu7 4}
+CPU8 ${alignr}${cpu cpu8}%
+${cpubar cpu8 4}
+
+Ram ${alignr}$mem / $memmax ($memperc%)
+${membar 4}
+
+${color white}Filesystem ${hr 1}${color}
+
+Root: ${alignr}${fs_free /} / ${fs_size /}
+${fs_bar 4 /}
+Storage: ${alignr}${fs_free /mnt/F2A09679A096444F} / ${fs_size /mnt/F2A09679A096444F}
+${fs_bar 4 /mnt/F2A09679A096444F}
+Windows: ${alignr}${fs_free /media/paradime/B480CBA380CB6A86} / ${fs_size /media/paradime/B480CBA380CB6A86}
+${fs_bar 4 /media/paradime/B480CBA380CB6A86}
+
+${color white}NETWORK ${hr 1}${color}
+
+IP: ${alignr}${addr wlp3s0}
+
+Down ${downspeed wlp3s0} k/s ${alignr}Up ${upspeed wlp3s0} k/s
+${downspeedgraph wlp3s0 25,107} ${alignr}${upspeedgraph wlp3s0 25,107}
+Total ${totaldown wlp3s0} ${alignr}Total ${totalup wlp3s0}
+
+${color white}Todo List ${hr 1}${color}
+${exec cat .todo}
