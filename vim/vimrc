@@ -1,0 +1,26 @@
+set backspace=indent,eol,start
+set shiftwidth=4
+" tab width in spaces
+set tabstop=4
+" autoindent next line
+set autoindent
+" show line numbers
+set number
+" highlight current line
+set cursorline
+" autocomplete command menu
+set wildmenu
+" redraw the screen only when necessary
+set lazyredraw
+" search as characters are entered
+set incsearch
+" highlight search matches
+set hlsearch
+" show the status line
+set laststatus=2
+set statusline=%f%m%r%h%w
+
+colorscheme wombat
+syntax on
+
+au BufRead,BufNewFile *.asm set filetype=nasm
