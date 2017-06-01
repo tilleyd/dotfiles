@@ -6,7 +6,7 @@ if [[ $UID -eq 0 ]]; then
     local user_host='%{$terminfo[bold]$fg[red]%}%n%{$reset_color%}'
     local user_symbol='#'
 else
-    local user_host='%{$terminfo[bold]$fg[green]%}%n%{$reset_color%}'
+    local user_host='%{$terminfo[bold]$fg[blue]%}%n%{$reset_color%}'
     local user_symbol='▶'
 fi
 
@@ -17,6 +17,6 @@ PROMPT="╭─ ${user_host} ─ ${current_dir} ─ ${git_branch}
 ╰─%B${user_symbol}%b "
 RPS1="%B${return_code}%b"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}‹"
 ZSH_THEME_GIT_PROMPT_SUFFIX="› %{$reset_color%}─"
 
