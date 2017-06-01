@@ -19,8 +19,11 @@ set hlsearch
 " show the status line
 set laststatus=2
 set statusline=%f%m%r%h%w
+" reduce the updatetime to 250ms
+set updatetime=250
 
-colorscheme wombat
+"colorscheme wombat
+colorscheme custom
 syntax on
 
 au BufRead,BufNewFile *.asm set filetype=nasm
