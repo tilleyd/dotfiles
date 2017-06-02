@@ -9,7 +9,7 @@ let g:colors_name = "custom"
 
 " vim ui color highlighting
 hi CursorLine	cterm=none		ctermbg=black
-hi CursorLineNr	cterm=bold		ctermbg=darkgray
+hi CursorLineNr	cterm=bold		ctermbg=darkgray		ctermfg=white
 hi DiffAdd						ctermbg=darkblue		ctermfg=white
 hi DiffChange					ctermbg=darkmagenta		ctermfg=white
 hi DiffDelete					ctermbg=darkred			ctermfg=white
