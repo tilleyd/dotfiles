@@ -3,7 +3,7 @@
 
 # Some oh-my-zsh settings
 export ZSH=/home/duncan/.oh-my-zsh
-ZSH_THEME="bira-custom"
+ZSH_THEME="custom"
 DEFAULT_USER="duncan"
 
 # Load the git plugin and start oh-my-zsh
@@ -11,10 +11,14 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Some useful aliases
-alias sudo='sudo '
+alias sudo='sudo -E '
+alias su='su -p'
 alias g++='g++ -std=c++11'
 alias pacinstall='pacman -S'
-alias pacremove='pacman -Rns'
+alias pacremove='pacman -Rscdns'
 alias update='pacman -Sy'
 alias upgrade='pacman -Syu'
+
+# run screenfetch
+#screenfetch -w
 
