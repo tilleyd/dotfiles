@@ -18,9 +18,15 @@ set incsearch
 set hlsearch
 " show the status line
 set laststatus=2
-set statusline=%f%m%r%h%w
+set statusline=%f%m%r%h%w%=%l:%c
 " reduce the updatetime to 250ms
 set updatetime=250
+" add right margin
+"set colorcolumn=80
+" enable mouse interaction
+set mouse=a
+" disable line wrapping
+set nowrap
 
 colorscheme custom
 syntax on
@@ -36,8 +42,8 @@ noremap <C-l> w
 noremap H 0
 noremap L $
 " faster up-down movement
-noremap J }
-noremap K {
+noremap J 10j
+noremap K 10k
 " move line up or down
 noremap <C-j> :m .+1<CR>
 noremap <C-k> :m .-2<CR>
@@ -55,14 +61,14 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
 " window mappings
-execute "set <M-h>=h"
 execute "set <M-j>=j"
+execute "set <M-h>=h"
 execute "set <M-k>=k"
 execute "set <M-l>=l"
 noremap <M-h> <C-w>h
 noremap <M-j> <C-w>j
 noremap <M-k> <C-w>k
 noremap <M-l> <C-w>l
-noremap <C-v> :vsplit<CR>
-noremap <C-h> :split<CR>
+"noremap <C-v> :vsplit<CR>
+"noremap <C-h> :split<CR>
 

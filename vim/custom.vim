@@ -8,6 +8,7 @@ let g:colors_name = "custom"
 " note that all gui and term colors are left out as they are not usually used
 
 " vim ui color highlighting
+hi ColorColumn					ctermbg=darkgray
 hi CursorLine	cterm=none		ctermbg=black
 hi CursorLineNr	cterm=bold		ctermbg=darkgray		ctermfg=white
 hi DiffAdd						ctermbg=darkblue		ctermfg=white
@@ -45,7 +46,7 @@ hi WildMenu						ctermbg=yellow			ctermfg=black
 " syntax highlighting
 hi Comment		cterm=none								ctermfg=gray
 hi Constant		cterm=none								ctermfg=yellow
-hi Identifier	cterm=none								ctermfg=darkcyan
+hi Identifier	cterm=none								ctermfg=darkmagenta
 hi PreProc		cterm=none								ctermfg=magenta
 hi Special		cterm=none								ctermfg=lightred
 hi Statement	cterm=bold								ctermfg=blue

@@ -1,17 +1,18 @@
 ! COLORS
 rofi.color-enabled:                  true
-rofi.color-normal:                   argb:00000000,  #D8DEE9 , argb:00000000,  #0f1418 ,  #d3dae3
-rofi.color-urgent:                   argb:00000000,  #F99157 , argb:00000000,  #F99157 ,  #d3dae3
-rofi.color-active:                   argb:00000000,  #6699CC , argb:00000000,  #6699CC ,  #d3dae3
-rofi.color-window:                   argb:ee20242b,  #0f1418 ,  #0f1418 
+rofi.color-normal:                   argb:00000000,  #e8e8e8 , argb:00000000,  #242830 ,  #e8e8e8
+rofi.color-urgent:                   argb:00000000,  #F99157 , argb:00000000,  #F99157 ,  #e8e8e8
+rofi.color-active:                   argb:00000000,  #6699CC , argb:00000000,  #6699CC ,  #e8e8e8
+rofi.color-window:                   argb:ee2f343f,  #7cafc2 ,  #242830
 rofi.separator-style:                solid
 
 ! FONTS
-rofi.font: Hack 12
+rofi.font: Hack 10
 
 ! DISPLAY
+rofi.bw: 0
 rofi.opacity: 100
-rofi.width: 40
+rofi.width: 30
 rofi.lines: 15
 rofi.columns: 1
 

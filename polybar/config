@@ -6,30 +6,38 @@ margin-bottom = 0
 monitor = HDMI2
 monitor-fallback = eDP1
 width = 100%
-height = 34
+height = 28
 
 background = #00000000
-foreground = #ccffffff
+#background = #383838
+foreground = #e8e8e8
 
-line-color = ${bar/bottom.background}
-line-size = 16
+line-color = #7cafc2
+line-size = 0
+
+border-bottom-size = 0
+border-bottom-color = #7cafc2
+
+border-top-size = 2
+border-top-color = ${bar/top.background}
 
 spacing = 2
 padding-right = 5
+padding-left = 5
 module-margin = 4
 
 tray-position = right
 tray-detached = false
-tray-transparent = true
+tray-transparent = false
 
 font-0 = Source Sans Pro:size=9;-1
 font-1 = MaterialIcons:size=10;0
 font-2 = Hack:size=9:antialias=false;-2
 font-3 = FontAwesome:size=10;0
 
-modules-left = powermenu i3 cpu memory
-modules-center = xwindow
-modules-right = volume backlight wireless-network wired-network battery date
+modules-left = cpu memory i3
+modules-center = date
+modules-right = volume backlight wireless-network wired-network battery
 
 [bar/bottom]
 monitor = HDMI2
@@ -41,8 +49,8 @@ height = 27
 background = ${bar/top.background}
 foreground = ${bar/top.foreground}
 
-line-color = ${bar/top.background}
-line-size = 2
+line-color = #7cafc2
+line-size = 0
 
 spacing = 3
 padding-right = 4
@@ -65,17 +73,45 @@ format = <ramp> <bar>
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
+ramp-foreground = #e8e8e8
 
 bar-width = 10
 bar-indicator = |
 bar-indicator-font = 3
-bar-indicator-foreground = #ff
+bar-indicator-foreground = #e8e8e8
 bar-fill = ─
 bar-fill-font = 3
-bar-fill-foreground = #c9665e
+bar-fill-foreground = #7cafc2
 bar-empty = ─
 bar-empty-font = 3
 bar-empty-foreground = #44
+
+[module/i3]
+type = internal/i3
+
+format = <label-state> <label-mode>
+label-mode = %mode%
+label-mode-foreground = #7cafc2
+label-mode-padding = 2
+
+label-focused = %index%
+label-focused-foreground = #7cafc2
+label-focused-underline = #7cafc2
+label-focused-padding = 4
+
+label-unfocused = %index%
+label-unfocused-foreground = #e8e8e8
+label-unfocused-padding = 4
+
+label-visible = %index%
+label-visible-underline = #555555
+label-visible-foreground = #e8e8e8
+label-visible-padding = 4
+
+label-urgent = %index%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+Label-urgent-padding = 4
 
 [module/battery]
 type = internal/battery
@@ -88,13 +124,20 @@ format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
 
+label-charging-foreground = #e8e8e8
+label-discharging-foreground = #e8e8e8
+label-full-foreground = #e8e8e8
+
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = #f53c3c
 ramp-capacity-1 = 
-ramp-capacity-1-foreground = #ffa900
+ramp-capacity-1-foreground = #e8e8e8
 ramp-capacity-2 = 
+ramp-capacity-2-foreground = #e8e8e8
 ramp-capacity-3 = 
+ramp-capacity-3-foreground = #e8e8e8
 ramp-capacity-4 = 
+ramp-capacity-4-foreground = #7cafc2
 
 bar-capacity-width = 10
 bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
@@ -120,16 +163,16 @@ label = CPU
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 2
-ramp-coreload-0-foreground = #aaff77
+ramp-coreload-0-foreground = #7cafc2
 ramp-coreload-1 = ▂
 ramp-coreload-1-font = 2
-ramp-coreload-1-foreground = #aaff77
+ramp-coreload-1-foreground = #7cafc2
 ramp-coreload-2 = ▃
 ramp-coreload-2-font = 2
-ramp-coreload-2-foreground = #aaff77
+ramp-coreload-2-foreground = #7cafc2
 ramp-coreload-3 = ▄
 ramp-coreload-3-font = 2
-ramp-coreload-3-foreground = #aaff77
+ramp-coreload-3-foreground = #7cafc2
 ramp-coreload-4 = ▅
 ramp-coreload-4-font = 2
 ramp-coreload-4-foreground = #fba922
@@ -138,15 +181,14 @@ ramp-coreload-5-font = 2
 ramp-coreload-5-foreground = #fba922
 ramp-coreload-6 = ▇
 ramp-coreload-6-font = 2
-ramp-coreload-6-foreground = #ff5555
+ramp-coreload-6-foreground = #e8e8e85555
 ramp-coreload-7 = █
 ramp-coreload-7-font = 2
-ramp-coreload-7-foreground = #ff5555
+ramp-coreload-7-foreground = #e8e8e85555
 
 [module/date]
 type = internal/date
-date =    %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
-date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+date =    %%{F#99}%Y-%m-%d%%{F-}  %%{F#e8e8e8}%H:%M%%{F-}
 
 [module/memory]
 type = internal/memory
@@ -154,13 +196,13 @@ format = <label> <bar-used>
 label = RAM
 
 bar-used-width = 15
-bar-used-foreground-0 = #aaff77
-bar-used-foreground-1 = #aaff77
+bar-used-foreground-0 = #7cafc2
+bar-used-foreground-1 = #7cafc2
 bar-used-foreground-2 = #fba922
-bar-used-foreground-3 = #ff5555
+bar-used-foreground-3 = #e8e8e85555
 bar-used-indicator = |
 bar-used-indicator-font = 6
-bar-used-indicator-foreground = #ff
+bar-used-indicator-foreground = #e8e8e8
 bar-used-fill = ─
 bar-used-fill-font = 6
 bar-used-empty = ─
@@ -185,7 +227,7 @@ toggle-off-foreground = #55
 bar-progress-width = 45
 bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
 bar-progress-indicator = |
-bar-progress-indicator-foreground = #ff
+bar-progress-indicator-foreground = #e8e8e8
 bar-progress-indicator-font = 3
 bar-progress-fill = ─
 bar-progress-fill-foreground = #bb
@@ -203,6 +245,7 @@ exec = ~/.config/polybar/mpris.sh
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+label-foreground = #e8e8e8
 label-layout = %{F#55}%{F-} %layout%
 label-layout-underline = ${colors.secondary}
 label-indicator-padding = 2
@@ -219,6 +262,7 @@ ping-interval = 10
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
 label-disconnected =    not connected
+label-connected-foreground = #e8e8e8
 label-disconnected-foreground = #66
 
 ramp-signal-0 = 
@@ -226,9 +270,10 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
+ramp-signal-foreground = #e8e8e8
 
 animation-packetloss-0 = 
-animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-0-foreground = #e8e8e8a64c
 animation-packetloss-1 = 
 animation-packetloss-1-foreground = ${bar/top.foreground}
 animation-packetloss-framerate = 500
@@ -281,6 +326,6 @@ menu-0-2-exec = poweroff
 [module/clock]
 type = internal/date
 interval = 2
-date = %%{F#999}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
+date = %%{F#999}%Y-%m-%d%%{F-}  %%{F#e8e8e8}%H:%M%%{F-}
 
 ; vim:ft=dosini

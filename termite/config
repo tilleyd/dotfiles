@@ -38,14 +38,12 @@ cursor_shape = block
 #cursor = #dcdccc
 #cursor_foreground = #dcdccc
 
-foreground = #f3f3f3
-#foreground_bold = #ffffff
+foreground = #e8e8e8
+#background = #383838
+#background = rgba(56, 56, 56, 0.9)
 # arc dark
 #background = #2f343f
 background = rgba(47, 52, 63, 0.9)
-# arc grey
-#background = #3d3d3d
-#background = rgba(61, 61, 61, 0.9)
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
@@ -54,22 +52,26 @@ background = rgba(47, 52, 63, 0.9)
 highlight = #2f2f2f
 
 # Colors from color0 to color254 can be set
-color0 = #20232b
-color1 = #e26565
-color2 = #9fe57e
-color3 = #c5995d
-color4 = #6b92cf
-color5 = #ae4c7c
-color6 = #56caca
-color7 = #babdb6
-color8 = #434a5a
-color9 = #ed8383
-color10 = #c5ffa9
-color11 = #dfb478
-color12 = #86aae3
-color13 = #e27daf
-color14 = #63e8e8
-color15 = #eeeeec
+# Colors are in order gray, red, green, yellow, blue, magenta, cyan, white
+# 0-7 are dark and 8-15 are light
+color0 = #242830
+#color0 = #282828
+color1 = #c9524e
+color2 = #a1b56c
+color3 = #f7ca88
+color4 = #7cafc2
+color5 = #ba8baf
+color6 = #86c1b9
+color7 = #d8d8d8
+color8 = #50586b
+#color8 = #585858
+color9 = #c9524e
+color10 = #a1b56c
+color11 = #f7ca88
+color12 = #7cafc2
+color13 = #ba8baf
+color14 = #86c1b9
+color15 = #f8f8f8
 
 [hints]
 #font = Monospace 12
