@@ -1,0 +1,24 @@
+# Author: Duncan Tilley
+
+export ZSH=/usr/share/oh-my-zsh
+ZSH_THEME="dtys"
+DEFAULT_USER="duncan"
+
+# plugins list
+plugins=(
+  git
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# some useful aliases
+alias vim='nvim'
+alias sudo='sudo '
+
+# environment variables
+export JAVA_HOME="/usr/lib/jvm/java-1.9.0-openjdk-amd64"
+export PATH="$PATH:/home/duncan/.android/sdk/tools"
+export EDITOR="/usr/bin/nvim"
+
+# print the date
+#echo `date +"Started at %F %H:%M"` in `pwd`

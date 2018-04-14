@@ -5,19 +5,20 @@ margin-bottom = 0
 [bar/default]
 monitor = HDMI2
 monitor-fallback = eDP1
+override-redirect = true
 width = 100%
 height = 28
 
-#background = #00000000
-background = #ee222d32
+background = #00000000
+#background = #ee222d32
 foreground = #e8e8e8
 
 line-color = #7cafc2
 line-size = 0
 
-border-bottom-size = 2
+#border-bottom-size = 2
 #border-bottom-color = #b8c1c6
-border-bottom-color = #1c2529
+#border-bottom-color = #1c2529
 
 border-top-size = 2
 border-top-color = ${bar/default.background}
@@ -39,7 +40,7 @@ underline-size = 0
 
 modules-left = i3 mpd
 modules-center = date
-modules-right = cpu memory volume backlight wireless-network wired-network battery
+modules-right = volume backlight wireless-network wired-network battery
 
 [bar/default-i3]
 monitor = HDMI2
