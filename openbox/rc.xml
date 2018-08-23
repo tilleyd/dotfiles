@@ -229,6 +229,38 @@ AUTHOR: Duncan Tilley
     <keybind key="A-f">
       <action name="ToggleMaximize"/>
     </keybind>
+    <keybind key="A-Right">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>1/2</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
+      </action>
+    </keybind>
+    <keybind key="A-Left">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <x>0</x>
+        <y>0</y>
+        <width>50%</width>
+        <height>100%</height>
+      </action>
+    </keybind>
+    <keybind key="A-Up">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <y>0</y>
+        <height>50%</height>
+      </action>
+    </keybind>
+    <keybind key="A-Down">
+      <action name="UnmaximizeFull"/>
+      <action name="MoveResizeTo">
+        <y>1/2</y>
+        <height>50%</height>
+      </action>
+    </keybind>
     <keybind key="A-Tab">
       <action name="NextWindow">
         <finalactions>
