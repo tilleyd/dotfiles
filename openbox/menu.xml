@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu>
+    <menu id="root-menu" label="Openbox 3">
+        <separator label="Applications"/>
+        <!-- ACCESSORIES -->
+        <menu id="accessories" label="Accessories">
+            <item label="Mousepad">
+                <action name="Execute">
+                    <execute>mousepad</execute>
+                </action>
+            </item>
+            <item label="SpeedCrunch">
+                <action name="Execute">
+                    <execute>speedcrunch</execute>
+                </action>
+            </item>
+            <item label="Terminator">
+                <action name="Execute">
+                    <execute>terminator</execute>
+                </action>
+            </item>
+            <item label="Termite">
+                <action name="Execute">
+                    <execute>termite</execute>
+                </action>
+            </item>
+            <item label="Thunar">
+                <action name="Execute">
+                    <execute>thunar</execute>
+                </action>
+            </item>
+        </menu>
+        <!-- GAMES -->
+        <menu id="games" label="Games">
+            <item label="Minecraft">
+                <action name="Execute">
+                    <execute>minecraft</execute>
+                </action>
+            </item>
+            <item label="Steam">
+                <action name="Execute">
+                    <execute>steam-runtime</execute>
+                </action>
+            </item>
+        </menu>
+        <!-- GRAPHICS -->
+        <menu id="graphics" label="Graphics">
+            <item label="Blender">
+                <action name="Execute">
+                    <execute>blender</execute>
+                </action>
+            </item>
+            <item label="gColor2">
+                <action name="Execute">
+                    <execute>gcolor2</execute>
+                </action>
+            </item>
+            <item label="GIMP">
+                <action name="Execute">
+                    <execute>gimp</execute>
+                </action>
+            </item>
+            <item label="Inkscape">
+                <action name="Execute">
+                    <execute>inkscape</execute>
+                </action>
+            </item>
+        </menu>
+        <!-- INTERNET -->
+        <menu id="internet" label="Internet">
+            <item label="Firefox">
+                <action name="Execute">
+                    <execute>firefox</execute>
+                </action>
+            </item>
+            <item label="Google Chrome">
+                <action name="Execute">
+                    <execute>google-chrome-stable</execute>
+                </action>
+            </item>
+            <item label="Telegram">
+                <action name="Execute">
+                    <execute>telegram-desktop</execute>
+                </action>
+            </item>
+        </menu>
+        <!-- MEDIA -->
+        <menu id="media" label="Media">
+            <item label="Audacious">
+                <action name="Execute">
+                    <execute>audacious</execute>
+                </action>
+            </item>
+            <item label="Audacity">
+                <action name="Execute">
+                    <execute>audacity</execute>
+                </action>
+            </item>
+            <item label="VLC">
+                <action name="Execute">
+                    <execute>vlc</execute>
+                </action>
+            </item>
+        </menu>
+        <!-- OFFICE -->
+        <menu id="office" label="Office">
+            <item label="Gummi">
+                <action name="Execute">
+                    <execute>gummi</execute>
+                </action>
+            </item>
+            <item label="Libre Office">
+                <action name="Execute">
+                    <execute>libreoffice</execute>
+                </action>
+            </item>
+        </menu>
+        <!-- PROGRAMMING -->
+        <menu id="programming" label="Programming">
+            <item label="Android Studio">
+                <action name="Execute">
+                    <execute>androidstudio</execute>
+                </action>
+            </item>
+            <item label="Visual Studio Code">
+                <action name="Execute">
+                    <execute>code</execute>
+                </action>
+            </item>
+            <item label="PgAdmin4">
+                <action name="Execute">
+                    <execute>pgadmin4</execute>
+                </action>
+            </item>
+            <item label="Postman">
+                <action name="Execute">
+                    <execute>postman</execute>
+                </action>
+            </item>
+            <item label="Spyder3">
+                <action name="Execute">
+                    <execute>spyder3</execute>
+                </action>
+            </item>
+            <separator/>
+            <item label="nvim">
+                <action name="Execute">
+                    <execute>nvim</execute>
+                </action>
+            </item>
+        </menu>
+        <!-- SECURITY -->
+        <menu id="security" label="Security">
+            <item label="Wireshark">
+                <action name="Execute">
+                    <execute>wireshark</execute>
+                </action>
+            </item>
+            <separator/>
+            <item label="mitmproxy">
+                <action name="Execute">
+                    <execute>termite -e mitmproxy</execute>
+                </action>
+            </item>
+        </menu>
+        <!-- UTILITIES -->
+        <menu id="utilities" label="Utilities">
+            <item label="Dropbox">
+                <action name="Execute">
+                    <execute>dropbox</execute>
+                </action>
+            </item>
+            <item label="VirtualBox">
+                <action name="Execute">
+                    <execute>virtualbox</execute>
+                </action>
+            </item>
+            <separator/>
+            <item label="htop">
+                <action name="Execute">
+                    <execute>termite -e htop</execute>
+                </action>
+            </item>
+        </menu>
+        <separator label="System"/>
+        <!-- SETTINGS -->
+        <menu id="settings" label="Settings">
+            <menu id="openbox" label="Openbox">
+                <item label="obconf">
+                    <action name="Execute">
+                        <execute>obconf</execute>
+                    </action>
+                </item>
+                <separator/>
+                <item label="reconfigure">
+                    <action name="Reconfigure"/>
+                </item>
+                <item label="restart">
+                    <action name="Restart"/>
+                </item>
+            </menu>
+            <separator/>
+            <item label="arandr">
+                <action name="Execute">
+                    <execute>arandr</execute>
+                </action>
+            </item>
+            <item label="lxappearance">
+                <action name="Execute">
+                    <execute>lxappearance</execute>
+                </action>
+            </item>
+            <item label="nitrogen">
+                <action name="Execute">
+                    <execute>nitrogen</execute>
+                </action>
+            </item>
+            <item label="pavucontrol">
+                <action name="Execute">
+                    <execute>pavucontrol</execute>
+                </action>
+            </item>
+            <item label="tint2conf">
+                <action name="Execute">
+                    <execute>tint2conf</execute>
+                </action>
+            </item>
+        </menu>
+        <!-- SESSION -->
+        <menu id="session" label="Session">
+            <item label="Logout">
+                <action name="Exit"/>
+            </item>
+            <item label="Reboot">
+                <action name="Execute">
+                    <prompt>Are you sure you want to reboot the system?</prompt>
+                    <execute>reboot</execute>
+                </action>
+            </item>
+            <item label="Poweroff">
+                <action name="Execute">
+                    <prompt>Are you sure you want to power off the system?</prompt>
+                    <execute>poweroff</execute>
+                </action>
+            </item>
+        </menu>
+    </menu>
+</openbox_menu>
