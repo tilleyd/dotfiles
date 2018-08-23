@@ -140,7 +140,7 @@ AUTHOR: Duncan Tilley
         <command>rofi -show run</command>
       </action>
     </keybind>
-    <keybind key="A-e">
+    <keybind key="A-c">
       <action name="Execute">
         <command>thunar</command>
       </action>
@@ -463,16 +463,6 @@ AUTHOR: Duncan Tilley
       </mousebind>
     </context>
     <context name="Desktop">
-      <mousebind button="Up" action="Click">
-        <action name="GoToDesktop">
-          <to>previous</to>
-        </action>
-      </mousebind>
-      <mousebind button="Down" action="Click">
-        <action name="GoToDesktop">
-          <to>next</to>
-        </action>
-      </mousebind>
       <mousebind button="A-Up" action="Click">
         <action name="GoToDesktop">
           <to>previous</to>
