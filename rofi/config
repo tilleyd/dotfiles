@@ -10,7 +10,7 @@ rofi.color-normal:                   #00000000, #bbc1c9, #00000000, #ff5294e2, #
 rofi.color-urgent:                   #00000000, #f99157, #00000000, #ff5294e2, #e4ebf5
 rofi.color-active:                   #00000000, #6699cc, #00000000, #ff5294e2, #e4ebf5
 !                                    backgr   border   element
-rofi.color-window:                   #282a33, #282a33, #1e1f26
+rofi.color-window:                   #282a33, #5294e2, #1e1f26
 
 ! APPEARANCE
 rofi.font:                           Hack 11
@@ -21,7 +21,7 @@ rofi.fake-transparency: false
 rofi.hide-scrollbar:                 true
 
 ! GEOMETRY
-rofi.bw:                             0
+rofi.bw:                             2
 rofi.width:                          30
 rofi.lines:                          5
 rofi.columns:                        3

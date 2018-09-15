@@ -76,7 +76,7 @@ window.inactive.label.text.color: #32343d
 
 window.inactive.button.unpressed.image.color: #32343d
 window.inactive.button.pressed.image.color: #e4ebf5
-window.inactive.button.disabled.image.color: #ffffff
+window.inactive.button.disabled.image.color: #282a33
 window.inactive.button.hover.image.color: #1e1f26
 window.inactive.button.toggled.unpressed.image.color: #32343d
 window.inactive.button.toggled.pressed.image.color: #e4ebf5
