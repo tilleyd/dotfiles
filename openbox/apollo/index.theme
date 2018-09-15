@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Apollo
+Comment=A dark flat theme
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Apollo
+MetacityTheme=Apollo
+IconTheme=gnome
+CursorTheme=DMZ-White
+ButtonLayout=menu:minimize,maximize,close

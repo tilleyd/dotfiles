@@ -1,3 +1,6 @@
+" nvim config
+" Author: Duncan Tilley
+
 " initialize vim-plug plugins
 call plug#begin('~/.config/nvim/plugged')
 Plug 'itchyny/vim-gitbranch'
@@ -5,16 +8,21 @@ Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
+Plug 'lervag/vimtex'
+Plug 'leafgarland/typescript-vim'
+Plug 'tikhomirov/vim-glsl'
+Plug 'sophacles/vim-processing'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'shiracamus/vim-syntax-x86-objdump-d'
 call plug#end()
 
 colorscheme custom
 syntax on
 
-" set up airline
-"let g:airline_powerline_fonts = 1
-"let g:airline_theme='onedark'
+" set up vimtex
+let g:vimtex_view_general_viewer='evince'
+autocmd FileType tex setlocal wrap textwidth=0
+autocmd FileType tex match
 
 set backspace=indent,eol,start
 set shiftwidth=4
@@ -45,9 +53,6 @@ set lazyredraw
 set incsearch
 " highlight search matches
 set hlsearch
-" show the status line
-set laststatus=2
-set statusline=%f%m%r%h%w%=%l:%c
 " reduce the updatetime to 250ms
 set updatetime=250
 " add right margin
@@ -57,9 +62,15 @@ set mouse=a
 " disable line wrapping
 set nowrap
 " make a nice 80-column setup
-let &colorcolumn=join(range(81,999), ",")
+"let &colorcolumn=join(range(81,999), ",")
+" highlight past 80-column
+"let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+match ErrorMsg '\%>80v.\+'
 " always show 10 lines around the cursor
 set scrolloff=10
+" more natural splitting
+set splitbelow
+set splitright
 
 " switch assembly syntax to use nasm syntax
 " instead of AT&T syntax
@@ -70,7 +81,12 @@ inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
-map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-t> :split \| terminal <return>i
+map <C-b> :NERDTreeToggle<CR>
 
 " gitgutter setup
 let g:gitgutter_sign_added='|'
@@ -82,12 +98,12 @@ let g:gitgutter_sign_modified_removed='|'
 " custom statusline
 set laststatus=2
 set statusline=\ %t
-set statusline+=%{&readonly?'\ ':!&modifiable?'\ ':''}\ 
-set statusline+=%{gitbranch#name()!=''?'\ \ '.gitbranch#name().'\ ':''}
+set statusline+=%{&readonly?'\ ':!&modifiable?'\ ':''}
+set statusline+=%{gitbranch#name()!=''?'\ \ '.gitbranch#name().'\':''}
 set statusline+=%{&modified?'\ \ [+]':''}
 set statusline+=%=
 set statusline+=%-14.(%l:%c%V%)
-set statusline+=\ %{&filetype!=#''?&filetype:'none'}
-set statusline+=\ %4p%%\ 
-hi StatusLine guibg=gray guifg=black
-hi StatusLineNC guibg=black guifg=gray
+set statusline+=\ %{&filetype!=#''?&filetype:'none'}
+set statusline+=\ %4p%%\ 
+hi StatusLine ctermbg=none ctermfg=gray
+hi StatusLineNC ctermbg=none ctermfg=black

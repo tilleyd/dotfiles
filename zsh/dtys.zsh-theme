@@ -22,7 +22,7 @@ PROMPT="\
 %{$fg[white]%}@\
 %{$fg[green]%}%m \
 %{$fg[white]%}in \
-%{$fg[yellow]%}%3~%{$reset_color%}\
+%{$fg[magenta]%}%3~%{$reset_color%}\
 ${git_info} \
  $exit_code
 %{$fg[blue]%} ➤ %{$reset_color%}"

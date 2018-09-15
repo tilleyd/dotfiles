@@ -29,7 +29,7 @@ AUTHOR: Duncan Tilley
 	THEME SETTINGS
 	-->
   <theme>
-    <name>Arc-Darker</name>
+    <name>apollo</name>
     <titleLayout>IMC</titleLayout>
     <!--
 		N: window icon
@@ -147,7 +147,22 @@ AUTHOR: Duncan Tilley
     </keybind>
     <keybind key="A-Return">
       <action name="Execute">
-        <command>terminator</command>
+        <command>termite</command>
+      </action>
+    </keybind>
+    <keybind key="A-e">
+      <action name="Execute">
+        <command>firefox</command>
+      </action>
+    </keybind>
+    <keybind key="A-m">
+      <action name="Execute">
+        <command>termite -e ncmpcpp</command>
+      </action>
+    </keybind>
+    <keybind key="A-t">
+      <action name="Execute">
+        <command>i3lock-fancy</command>
       </action>
     </keybind>
     <!-- SPECIAL & MEDIA KEYS -->
@@ -290,23 +305,15 @@ AUTHOR: Duncan Tilley
     <screenEdgeWarpMouse>false</screenEdgeWarpMouse>
     <!-- ANYWHERE-FRAME EVENTS -->
     <context name="Frame">
-      <mousebind button="A-Left" action="Press">
-        <action name="Focus"/>
-        <action name="Raise"/>
-      </mousebind>
-      <mousebind button="A-Left" action="Click">
+      <mousebind button="A-Right" action="Click">
         <action name="Unshade"/>
-      </mousebind>
-      <mousebind button="A-Left" action="Drag">
-        <action name="Move"/>
       </mousebind>
       <mousebind button="A-Right" action="Press">
         <action name="Focus"/>
         <action name="Raise"/>
-        <action name="Unshade"/>
       </mousebind>
       <mousebind button="A-Right" action="Drag">
-        <action name="Resize"/>
+        <action name="Move"/>
       </mousebind>
       <mousebind button="A-Middle" action="Press">
         <action name="Lower"/>
@@ -329,11 +336,6 @@ AUTHOR: Duncan Tilley
         <action name="Focus"/>
         <action name="Raise"/>
         <action name="Unshade"/>
-      </mousebind>
-      <mousebind button="Middle" action="Press">
-        <action name="Lower"/>
-        <action name="FocusToBottom"/>
-        <action name="Unfocus"/>
       </mousebind>
       <mousebind button="Right" action="Press">
         <action name="Focus"/>
@@ -550,6 +552,7 @@ AUTHOR: Duncan Tilley
     <submenuHideDelay>400</submenuHideDelay>
     <showIcons>yes</showIcons>
     <manageDesktops>yes</manageDesktops>
+    <applicationIcons>yes</applicationIcons>
   </menu>
   <!--
 	INDIVIDUAL APPLICATION SETTINGS

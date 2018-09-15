@@ -8,36 +8,32 @@ let g:colors_name = "custom"
 " note that all gui and term colors are left out as they are not usually used
 
 " vim ui color highlighting
-hi ColorColumn					ctermbg=darkgray
-hi CursorLine	cterm=none		ctermbg=black
-hi CursorLineNr	cterm=bold		ctermbg=darkgray		ctermfg=white
+hi ColorColumn					ctermbg=black
+hi CursorLine	cterm=none      ctermbg=none
+hi CursorLineNr                 ctermbg=black           ctermfg=white
 hi DiffAdd						ctermbg=darkblue		ctermfg=white
 hi DiffChange					ctermbg=darkmagenta		ctermfg=white
 hi DiffDelete					ctermbg=darkred			ctermfg=white
 hi DiffText		cterm=bold		ctermbg=red				ctermfg=white
 hi Directory											ctermfg=darkblue
-hi ErrorMsg						ctermbg=darkred			ctermfg=white
+hi ErrorMsg						ctermbg=black           ctermfg=white
 hi FoldColumn					ctermbg=black			ctermfg=darkblue
 hi Folded						ctermbg=black			ctermfg=darkblue
 hi IncSearch	cterm=reverse
-hi LineNr						ctermbg=black			ctermfg=gray
+hi LineNr                                               ctermfg=white
 hi MatchParen					ctermbg=blue
 hi ModeMsg		cterm=bold
 hi MoreMsg												ctermfg=darkgreen
-hi NonText												ctermfg=blue
+hi NonText												ctermfg=darkgray
 hi PmenuSel						ctermbg=darkblue		ctermfg=white
 hi Question												ctermfg=darkgreen
-if &background == "light"
-    hi Search											ctermfg=none
-else
-    hi Search					ctermbg=yellow			ctermfg=black
-endif
+hi Search       cterm=reverse   ctermbg=yellow          ctermfg=black
 hi SpecialKey											ctermfg=DarkBlue
 hi StatusLine	cterm=bold		ctermbg=black			ctermfg=gray
 hi StatusLineNC	cterm=bold		ctermbg=black			ctermfg=darkgray
 hi Title												ctermfg=darkmagenta
 hi Todo							ctermbg=none			ctermfg=blue
-hi VertSplit	cterm=reverse
+hi VertSplit	                ctermbg=black           ctermfg=black
 hi Visual		cterm=reverse	ctermbg=none
 hi VisualNOS	cterm=underline,bold
 hi WarningMsg											ctermfg=darkred
@@ -47,8 +43,9 @@ hi WildMenu						ctermbg=yellow			ctermfg=black
 hi Comment		cterm=none								ctermfg=gray
 hi Constant		cterm=none								ctermfg=yellow
 hi Identifier	cterm=none								ctermfg=darkmagenta
-hi PreProc		cterm=none								ctermfg=magenta
-hi Special		cterm=none								ctermfg=lightred
+hi PreProc		cterm=none								ctermfg=red
+hi Special		cterm=none								ctermfg=magenta
+" these two can be blue for a nice blue theme
 hi Statement	cterm=bold								ctermfg=blue
 hi Type			cterm=none								ctermfg=blue
 

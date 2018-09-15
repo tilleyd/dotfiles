@@ -1,87 +1,41 @@
+# Termite Config
+# Where : $XDG_CONFIG_HOME/termite/config
+# Author: Duncan Tilley
+
 [options]
 allow_bold = false
 audible_bell = false
-#clickable_url = true
-#dynamic_title = true
-font = Hack 10
-#fullscreen = true
-#geometry = 640x480
-#icon_name = terminal
+font = Hack 11
+icon_name = terminal
 mouse_autohide = true
 scroll_on_output = false
 scroll_on_keystroke = true
 scrollback_lines = 10000
-#search_wrap = true
 urgent_on_bell = false
-
-# $BROWSER is used by default if set, with xdg-open as a fallback
-#browser = xdg-open
-
-# "system", "on" or "off"
-#cursor_blink = system
-
-# "block", "underline" or "ibeam"
 cursor_shape = block
 
-# Hide links that are no longer valid in url select overlay mode
-#filter_unmatched_urls = true
-
-# Emit escape sequences for extra modified keys
-#modify_other_keys = false
-
-# set size hints for the window
-#size_hints = false
-
 [colors]
-# If both of these are unset, cursor falls back to the foreground color,
-# and cursor_foreground falls back to the background color.
-#cursor = #dcdccc
-#cursor_foreground = #dcdccc
-
 foreground = #e8e8e8
-#background = #383838
-#background = rgba(56, 56, 56, 0.9)
-# arc dark
-#background = #2f343f
-background = rgba(47, 52, 63, 0.9)
+# #282a33
+background = rgba(40, 42, 51, 1.0)
 
-# 20% background transparency (requires a compositor)
-#background = rgba(63, 63, 63, 0.8)
-
-# If unset, will reverse foreground and background
-highlight = #2f2f2f
-
-# Colors from color0 to color254 can be set
 # Colors are in order gray, red, green, yellow, blue, magenta, cyan, white
 # 0-7 are dark and 8-15 are light
-color0 = #242830
-#color0 = #282828
-color1 = #c9524e
-color2 = #a1b56c
-color3 = #f7ca88
-color4 = #7cafc2
-color5 = #ba8baf
-color6 = #86c1b9
-color7 = #d8d8d8
-color8 = #50586b
-#color8 = #585858
-color9 = #c9524e
+color0  = #1e1f26
+color1  = #c9524e
+color2  = #a1b56c
+color3  = #f7ca88
+color4  = #7cafc2
+color5  = #ba8baf
+color6  = #86c1b9
+color7  = #c8c8c8
+color8  = #1e1f26
+color9  = #c9524e
 color10 = #a1b56c
 color11 = #f7ca88
 color12 = #7cafc2
 color13 = #ba8baf
 color14 = #86c1b9
-color15 = #f8f8f8
-
-[hints]
-#font = Monospace 12
-#foreground = #dcdccc
-#background = #3f3f3f
-#active_foreground = #e68080
-#active_background = #3f3f3f
-#padding = 2
-#border = #3f3f3f
-#border_width = 0.5
-#roundness = 2.0
+color15 = #c8c8c8
 
 # vim: ft=dosini cms=#%s

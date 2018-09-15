@@ -1,3 +1,5 @@
+# zsh config
+# Where : ~/.zshrc
 # Author: Duncan Tilley
 
 export ZSH=/usr/share/oh-my-zsh
@@ -13,12 +15,18 @@ source $ZSH/oh-my-zsh.sh
 
 # some useful aliases
 alias vim='nvim'
+alias ls='ls --color=auto --group-directories-first'
 alias sudo='sudo '
+alias objdump='objdump -M intel'
+alias su='su -p'
 
 # environment variables
-export JAVA_HOME="/usr/lib/jvm/java-1.9.0-openjdk-amd64"
-export PATH="$PATH:/home/duncan/.android/sdk/tools"
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
+export ANDROID_HOME="$HOME/.andriod"
+export PATH="$PATH:$HOME/.android/tools"
 export EDITOR="/usr/bin/nvim"
+export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # print the date
 #echo `date +"Started at %F %H:%M"` in `pwd`

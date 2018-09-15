@@ -1,32 +1,38 @@
 # OPENBOX AUTOSTART CONFIG
 # AUTHOR: Duncan Tilley
 
+###
+# STARTUP APPLICATIONS
+###
+
 # set the wallpaper
 nitrogen --restore &
-
 # run the compositor
 compton -b --config ~/.config/compton.conf &
-
 # conky widgets
-#conky &
-
+conky &
 # panels and docks
 #polybar default &
 #plank &
 tint2 &
-
 # various panel applets
 #blueman-applet &
 cbatticon &
 nm-applet &
 volumeicon &
+# music player daemon
+mpd &
+
+###
+# CONFIGURATIONS
+###
 
 # set up multiple monitors
-xrandr --output HDMI-2 --auto --primary --right-of eDP1
+xrandr --output HDMI2 --auto --primary --right-of eDP1
 fullrgb
-
 # set the rofi theme
 xrdb ~/.config/rofi/config
-
 # set the touchpad to the correct state
 touchpad-update
+# enable numlock
+numlockx
