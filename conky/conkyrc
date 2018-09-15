@@ -1,8 +1,8 @@
 background no
-font Hack:size=9
+font Hack:size=11
 use_xft yes
 xftalpha 0.9
-update_interval 3.0
+update_interval 1.5
 total_run_times 0
 own_window yes
 own_window_type desktop
@@ -29,15 +29,6 @@ override_utf8_locale no
 TEXT
 ${color white}System ${hr 1}${color}
 
-Hostname: $alignr$nodename
-Kernel: $alignr$kernel
-Uptime: $alignr$uptime
-Temp: ${alignr}${acpitemp}C
-
-CPU: ${alignr}${freq} MHz
-Processes: ${alignr}$processes ($running_processes running)
-Load: ${alignr}$loadavg
-
 CPU 1 ${alignr}${cpu cpu1}%
 ${cpubar cpu1 4}
 CPU 2 ${alignr}${cpu cpu2}%
@@ -58,6 +49,8 @@ ${cpubar cpu8 4}
 Memory ${alignr}$mem / $memmax ($memperc%)
 ${membar 4}
 
+Temperature ${alignr}${acpitemp}C
+
 ${color white}Filesystem ${hr 1}${color}
 
 Root: ${alignr}${fs_free /} / ${fs_size /}
@@ -74,3 +67,11 @@ Address: ${alignr}${addr wlp3s0}
 Down ${downspeed wlp3s0} k/s ${alignr}Up ${upspeed wlp3s0} k/s
 ${downspeedgraph wlp3s0 25,107} ${alignr}${upspeedgraph wlp3s0 25,107}
 Total ${totaldown wlp3s0} ${alignr}Total ${totalup wlp3s0}
+
+${color white}Music ${hr 1}${color}
+${scroll 25 ${exec mpc current -f '%title%'}}
+${scroll 25 ${exec mpc current -f '%artist%'}}
+${scroll 25 ${exec mpc current -f '%album%'}}
+
+${color white}Todo ${hr 1}${color}
+${exec cat ~/.todo.txt}
