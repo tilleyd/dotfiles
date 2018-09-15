@@ -9,7 +9,7 @@
                     <execute>mousepad</execute>
                 </action>
             </item>
-            <item label="SpeedCrunch" icon="/usr/share/pixmaps/speedcrunch.png">
+            <item label="SpeedCrunch">
                 <action name="Execute">
                     <execute>speedcrunch</execute>
                 </action>
@@ -27,17 +27,17 @@
         </menu>
         <!-- GAMES -->
         <menu id="games" label="Games">
-            <item label="Minecraft" icon="/usr/share/pixmaps/minecraft.png">
+            <item label="Minecraft">
                 <action name="Execute">
                     <execute>minecraft</execute>
                 </action>
             </item>
-            <item label="Powder Toy" icon="/usr/share/pixmaps/powder-toy.png">
+            <item label="Powder Toy">
                 <action name="Execute">
                     <execute>powder-toy</execute>
                 </action>
             </item>
-            <item label="Steam" icon="/usr/share/pixmaps/steam.png">
+            <item label="Steam">
                 <action name="Execute">
                     <execute>steam-runtime</execute>
                 </action>
@@ -50,7 +50,7 @@
                     <execute>blender</execute>
                 </action>
             </item>
-            <item label="gColor2" icon="/usr/share/pixmaps/gcolor2/icon.png">
+            <item label="gColor2">
                 <action name="Execute">
                     <execute>gcolor2</execute>
                 </action>
@@ -60,7 +60,7 @@
                     <execute>gimp</execute>
                 </action>
             </item>
-            <item label="Inkscape" icon="/usr/share/inkscape/icons/inkscape.svg">
+            <item label="Inkscape">
                 <action name="Execute">
                     <execute>inkscape</execute>
                 </action>
@@ -78,12 +78,12 @@
                     <execute>google-chrome-stable</execute>
                 </action>
             </item>
-            <item label="qBitTorrent" icon="/usr/share/pixmaps/qbittorrent.png">
+            <item label="qBitTorrent">
                 <action name="Execute">
                     <execute>qbittorrent</execute>
                 </action>
             </item>
-            <item label="Slack" icon="/usr/share/pixmaps/slack.png">
+            <item label="Slack">
                 <action name="Execute">
                     <execute>slack</execute>
                 </action>
@@ -101,12 +101,12 @@
                     <execute>audacious</execute>
                 </action>
             </item>
-            <item label="Audacity" icon="/usr/share/pixmaps/audacity.xpm">
+            <item label="Audacity">
                 <action name="Execute">
                     <execute>audacity</execute>
                 </action>
             </item>
-            <item label="VLC" icon="/usr/share/vlc/vlc.ico">
+            <item label="VLC">
                 <action name="Execute">
                     <execute>vlc</execute>
                 </action>
@@ -120,7 +120,7 @@
         </menu>
         <!-- OFFICE -->
         <menu id="office" label="Office">
-            <item label="Gummi" icon="/usr/share/pixmaps/gummi.png">
+            <item label="Gummi">
                 <action name="Execute">
                     <execute>gummi</execute>
                 </action>
@@ -153,7 +153,7 @@
                     <execute>atom</execute>
                 </action>
             </item>
-            <item label="Visual Studio Code" icon="/usr/share/visual-studio-code.png">
+            <item label="Visual Studio Code">
                 <action name="Execute">
                     <execute>code</execute>
                 </action>
@@ -168,18 +168,18 @@
                     <execute>postman</execute>
                 </action>
             </item>
-            <item label="Processing" icon="/usr/share/pixmaps/processing.png">
+            <item label="Processing">
                 <action name="Execute">
                     <execute>processing</execute>
                 </action>
             </item>
-            <item label="Spyder3" icon="/usr/share/spyder3.png">
+            <item label="Spyder3">
                 <action name="Execute">
                     <execute>spyder3</execute>
                 </action>
             </item>
             <separator/>
-            <item label="nvim" icon="/usr/share/pixmaps/nvim.png">
+            <item label="nvim">
                 <action name="Execute">
                     <execute>termite -e nvim</execute>
                 </action>
@@ -206,18 +206,18 @@
         </menu>
         <!-- UTILITIES -->
         <menu id="utilities" label="Utilities">
-            <item label="Dropbox" icon="/usr/share/pixmaps/dropbox.png">
+            <item label="Dropbox">
                 <action name="Execute">
                     <execute>dropbox</execute>
                 </action>
             </item>
-            <item label="VirtualBox" icon="/usr/share/pixmaps/VBox.png">
+            <item label="VirtualBox">
                 <action name="Execute">
                     <execute>virtualbox</execute>
                 </action>
             </item>
             <separator/>
-            <item label="htop" icon="/usr/share/pixmaps/htop.png">
+            <item label="htop">
                 <action name="Execute">
                     <execute>termite -e htop</execute>
                 </action>
@@ -227,7 +227,7 @@
         <!-- SETTINGS -->
         <menu id="settings" label="Settings">
             <menu id="openbox" label="Openbox">
-                <item label="OBConf" icon="/usr/share/pixmaps/obconf.png">
+                <item label="OBConf">
                     <action name="Execute">
                         <execute>obconf</execute>
                     </action>

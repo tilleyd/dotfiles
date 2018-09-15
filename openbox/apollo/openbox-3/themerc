@@ -1,5 +1,5 @@
 # Apollo Openbox theme
-# Author: Duncan Tilley
+# Duncan Tilley
 
 ###
 # COLORS
@@ -108,7 +108,7 @@ menu.overlap.x: 0
 menu.overlap.y: 0
 
 menu.border.color: #a8aeb5
-menu.separator.color: #32343d
+menu.separator.color: #ffffff
 
 menu.title.text.color: #bbc1c9
 menu.title.bg: flat solid
