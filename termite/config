@@ -5,7 +5,8 @@
 [options]
 allow_bold = false
 audible_bell = false
-font = Hack 11
+font = Gohu GohuFont 11
+#font = Hack 11
 icon_name = terminal
 mouse_autohide = true
 scroll_on_output = false

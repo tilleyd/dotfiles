@@ -1,5 +1,5 @@
 background no
-font Hack:size=11
+font Gohu GohuFont:size=11
 use_xft yes
 xftalpha 0.9
 update_interval 1.5
@@ -29,44 +29,37 @@ override_utf8_locale no
 TEXT
 ${color white}System ${hr 1}${color}
 
-CPU 1 ${alignr}${cpu cpu1}%
-${cpubar cpu1 4}
-CPU 2 ${alignr}${cpu cpu2}%
-${cpubar cpu2 4}
-CPU 3 ${alignr}${cpu cpu3}%
-${cpubar cpu3 4}
-CPU 4 ${alignr}${cpu cpu4}%
-${cpubar cpu4 4}
-CPU 5 ${alignr}${cpu cpu5}%
-${cpubar cpu5 4}
-CPU 6 ${alignr}${cpu cpu6}%
-${cpubar cpu6 4}
-CPU 7 ${alignr}${cpu cpu7}%
-${cpubar cpu7 4}
-CPU 8 ${alignr}${cpu cpu8}%
-${cpubar cpu8 4}
-
-Memory ${alignr}$mem / $memmax ($memperc%)
-${membar 4}
+CPU ${alignr}${cpu}%
+${color #5294e2}${cpubar cpu1 4}${color}
+${color #5294e2}${cpubar cpu2 4}${color}
+${color #5294e2}${cpubar cpu3 4}${color}
+${color #5294e2}${cpubar cpu4 4}${color}
+${color #5294e2}${cpubar cpu5 4}${color}
+${color #5294e2}${cpubar cpu6 4}${color}
+${color #5294e2}${cpubar cpu7 4}${color}
+${color #5294e2}${cpubar cpu8 4}${color}
 
 Temperature ${alignr}${acpitemp}C
+
+Memory ${alignr}$mem ($memperc%)
+${color #5294e2}${membar 4}${color}
 
 ${color white}Filesystem ${hr 1}${color}
 
 Root: ${alignr}${fs_free /} / ${fs_size /}
-${fs_bar 4 /}
+${color #5294e2}${fs_bar 4 /}${color}
 Storage: ${alignr}${fs_free /mnt/Storage} / ${fs_size /mnt/Storage}
-${fs_bar 4 /mnt/Storage}
+${color #5294e2}${fs_bar 4 /mnt/Storage}${color}
 Windows: ${alignr}${fs_free /mnt/Windows} / ${fs_size /mnt/Windows}
-${fs_bar 4 /mnt/Windows}
+${color #5294e2}${fs_bar 4 /mnt/Windows}${color}
 
 ${color white}Network ${hr 1}${color}
 
 Address: ${alignr}${addr wlp3s0}
 
 Down ${downspeed wlp3s0} k/s ${alignr}Up ${upspeed wlp3s0} k/s
-${downspeedgraph wlp3s0 25,107} ${alignr}${upspeedgraph wlp3s0 25,107}
-Total ${totaldown wlp3s0} ${alignr}Total ${totalup wlp3s0}
+${color #5294e2}${downspeedgraph wlp3s0 25,107} ${alignr}${upspeedgraph wlp3s0 25,107}${color}
+${totaldown wlp3s0} ${alignr}${totalup wlp3s0}
 
 ${color white}Music ${hr 1}${color}
 ${scroll 25 ${exec mpc current -f '%title%'}}

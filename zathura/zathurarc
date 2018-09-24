@@ -1,0 +1,34 @@
+# Zathura Config
+# Where : $XDG_CONFIG_HOME/zathura/zathurarc
+# Author: Duncan Tilley
+
+set font "Gohu GohuFont 11"
+
+include theme
+
+set recolor "false"
+# set recolor-keephue "true"
+
+set page-padding 10
+set scroll-wrap "true"
+set statusbar-home-tilde "true"
+
+map h scroll left
+map j scroll down
+map k scroll up
+map l scroll right
+map <C-j> navigate next
+map <C-k> navigate previous
+map <C-h> rotate rotate-ccw
+map <C-l> rotate rotate-cw
+
+map b adjust_window best-fit
+map H adjust_window best-fit
+map w adjust_window width
+map W adjust_window width
+
+map <C-g> goto
+map r reload
+map c recolor
+map u follow
+map i toggle_index

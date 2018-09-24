@@ -1,6 +1,3 @@
-" nvim config
-" Author: Duncan Tilley
-
 " initialize vim-plug plugins
 call plug#begin('~/.config/nvim/plugged')
 Plug 'itchyny/vim-gitbranch'
@@ -14,13 +11,14 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'sophacles/vim-processing'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'shiracamus/vim-syntax-x86-objdump-d'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 colorscheme custom
 syntax on
 
 " set up vimtex
-let g:vimtex_view_general_viewer='evince'
+let g:vimtex_view_general_viewer='zathura'
 autocmd FileType tex setlocal wrap textwidth=0
 autocmd FileType tex match
 
@@ -81,12 +79,9 @@ inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-l> <Right>
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <silent> vv <C-w>v
 nnoremap <C-t> :split \| terminal <return>i
-map <C-b> :NERDTreeToggle<CR>
+nnoremap <C-b> :NERDTreeToggle<CR>
 
 " gitgutter setup
 let g:gitgutter_sign_added='|'

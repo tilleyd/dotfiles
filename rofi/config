@@ -13,7 +13,7 @@ rofi.color-active:                   #00000000, #6699cc, #00000000, #ff5294e2, #
 rofi.color-window:                   #282a33, #5294e2, #1e1f26
 
 ! APPEARANCE
-rofi.font:                           Hack 11
+rofi.font:                           Gohu GohuFont 11
 rofi.separator-style:                none
 rofi.sidebar-mode:                   false
 rofi.fullscreen: false
