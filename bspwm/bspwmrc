@@ -1,0 +1,16 @@
+#! /bin/sh
+
+sxhkd &
+
+bspc monitor -d • • • • •
+
+bspc config border_width         1
+bspc config window_gap           12
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config top_padding          28
+
+$XDG_CONFIG_HOME/bspwm/autostart &
+
+wait

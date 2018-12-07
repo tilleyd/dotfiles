@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# bspwm autostart
+# author: tilleyd
+
+polybar default &

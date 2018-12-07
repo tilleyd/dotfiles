@@ -1,8 +1,7 @@
-# Zathura Config
-# Where : $XDG_CONFIG_HOME/zathura/zathurarc
-# Author: Duncan Tilley
+# zathura config
+# author: tilleyd
 
-set font "Hack 11"
+set font "Gohu GohuFont 11"
 
 include theme
 

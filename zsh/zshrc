@@ -1,10 +1,9 @@
 # zsh config
-# Where : ~/.zshrc
-# Author: Duncan Tilley
+# author: tilleyd
 
 export ZSH=/usr/share/oh-my-zsh
 ZSH_THEME="dtys"
-DEFAULT_USER="duncan"
+DEFAULT_USER="tilleyd"
 
 # plugins list
 plugins=(
@@ -21,11 +20,7 @@ alias objdump='objdump -M intel'
 alias su='su -p'
 
 # environment variables
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk"
-export ANDROID_HOME="$HOME/.andriod"
-export PATH="$PATH:$HOME/.android/tools"
 export EDITOR="/usr/bin/nvim"
-export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # print the date

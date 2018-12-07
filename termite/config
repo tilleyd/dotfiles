@@ -1,12 +1,10 @@
-# Termite Config
-# Where : $XDG_CONFIG_HOME/termite/config
-# Author: Duncan Tilley
+# termite config
+# author: tilleyd
 
 [options]
 allow_bold = false
 audible_bell = false
 font = Gohu GohuFont 11
-#font = Hack 11
 icon_name = terminal
 mouse_autohide = true
 scroll_on_output = false

@@ -1,6 +1,5 @@
 # dunst config
-# Where : $XDG_CONFIG_HOME/dunstrc
-# Author: Duncan Tilley
+# author: tilleyd
 
 [global]
     font = "Gohu GohuFont 11"

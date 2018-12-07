@@ -1,6 +1,5 @@
-! Rofi Config
-! Where : $XDG_CONFIG_HOME/rofi/config
-! Author: Duncan Tilley
+! rofi config
+! author: tilleyd
 
 ! COLOR
 rofi.color-enabled:                  true
