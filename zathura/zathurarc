@@ -2,7 +2,7 @@
 # Where : $XDG_CONFIG_HOME/zathura/zathurarc
 # Author: Duncan Tilley
 
-set font "Gohu GohuFont 11"
+set font "Hack 11"
 
 include theme
 
@@ -10,8 +10,10 @@ set recolor "false"
 # set recolor-keephue "true"
 
 set page-padding 10
-set scroll-wrap "true"
+set scroll-wrap "false"
 set statusbar-home-tilde "true"
+
+set show-scrollbars "true"
 
 map h scroll left
 map j scroll down

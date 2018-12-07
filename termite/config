@@ -17,12 +17,13 @@ cursor_shape = block
 
 [colors]
 foreground = #e8e8e8
-# #282a33
-background = rgba(40, 42, 51, 1.0)
+#background = rgba(47, 52, 63, 1.0)
+background = #000000
 
 # Colors are in order gray, red, green, yellow, blue, magenta, cyan, white
 # 0-7 are dark and 8-15 are light
-color0  = #1e1f26
+#color0  = #17191f
+color0  = #111111
 color1  = #c9524e
 color2  = #a1b56c
 color3  = #f7ca88
@@ -30,7 +31,8 @@ color4  = #7cafc2
 color5  = #ba8baf
 color6  = #86c1b9
 color7  = #c8c8c8
-color8  = #1e1f26
+#color8  = #17191f
+color8  = #111111
 color9  = #c9524e
 color10 = #a1b56c
 color11 = #f7ca88
@@ -38,5 +40,8 @@ color12 = #7cafc2
 color13 = #ba8baf
 color14 = #86c1b9
 color15 = #c8c8c8
+# other shades of background
+color16  = #2a2e38
+color17  = #2f343f
 
 # vim: ft=dosini cms=#%s
