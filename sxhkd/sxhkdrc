@@ -23,6 +23,32 @@ alt + c
 alt + e
     qutebrowser
 
+# mpd client
+alt + m
+    termite -e ncmpcpp
+
+# screen lock
+alt + shift + t
+    i3lock
+
+
+#
+# media keys
+#
+
+
+{XF86AudioRaiseVolume, XF86AudioLowerVolume}
+    amixer sset Master unmute 5%{+,-}
+
+XF86AudioMute
+    amixer sset Master toggle
+
+{XF86MonBrightnessUp, XF86MonBrightnessDown}
+    xbacklight -{inc,dec} 10
+
+XF86TouchpadToggle
+    touchpad-toggle; notify-send "touchpad toggled"
+
 
 #
 # bspwm hotkeys
