@@ -12,6 +12,7 @@ Plug 'sophacles/vim-processing'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'shiracamus/vim-syntax-x86-objdump-d'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 colorscheme custom

@@ -1,5 +1,5 @@
-" Custom vim colorscheme file
-" Author: Duncan Tilley
+" custom vim colorscheme
+" author: tilleyd
 
 hi clear
 
@@ -25,6 +25,7 @@ hi MatchParen					ctermbg=blue
 hi ModeMsg		cterm=bold
 hi MoreMsg												ctermfg=darkgreen
 hi NonText												ctermfg=darkgray
+hi Pmenu                        ctermbg=darkgray        ctermfg=white
 hi PmenuSel						ctermbg=darkblue		ctermfg=white
 hi Question												ctermfg=darkgreen
 hi Search       cterm=reverse   ctermbg=yellow          ctermfg=black
@@ -39,14 +40,18 @@ hi VisualNOS	cterm=underline,bold
 hi WarningMsg											ctermfg=darkred
 hi WildMenu						ctermbg=yellow			ctermfg=black
 
+" you complete me
+hi YcmErrorSection     cterm=underline   ctermbg=none      ctermfg=red
+hi YcmWarningSection   cterm=underline   ctermbg=none      ctermfg=yellow
+
 " syntax highlighting
-hi Comment		cterm=none								ctermfg=gray
-hi Constant		cterm=none								ctermfg=yellow
-hi Identifier	cterm=none								ctermfg=darkmagenta
-hi PreProc		cterm=none								ctermfg=red
+hi Comment	    cterm=none								ctermfg=gray
+hi Constant	    cterm=none								ctermfg=yellow
+hi Identifier   cterm=none								ctermfg=darkmagenta
+hi PreProc	    cterm=none								ctermfg=red
 hi Special		cterm=none								ctermfg=magenta
 " these two can be blue for a nice blue theme
-hi Statement	cterm=bold								ctermfg=blue
-hi Type			cterm=none								ctermfg=blue
+hi Statement    cterm=bold								ctermfg=blue
+hi Type         cterm=none								ctermfg=blue
 
 " vim: sw=2
