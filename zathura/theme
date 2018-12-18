@@ -3,11 +3,11 @@
 # Dark theme made in the manner of 'alect-dark':
 # <https://github.com/alezost/alect-themes>.
 
-set default-bg "#000000"
-set default-fg "#e8e8e8"
-set inputbar-bg "#000000"
-set inputbar-fg "#e8e8e8"
-set statusbar-bg "#000000"
-set statusbar-fg "#e8e8e8"
+set default-bg "#2b303b"
+set default-fg "#c0c5ce"
+set inputbar-bg "#2b303b"
+set inputbar-fg "#c0c5ce"
+set statusbar-bg "#2b303b"
+set statusbar-fg "#c0c5ce"
 set recolor-lightcolor "#111111"
-set recolor-darkcolor "#e8e8e8"
+set recolor-darkcolor "#a8a8a8"
