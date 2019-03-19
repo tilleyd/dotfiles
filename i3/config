@@ -1,83 +1,78 @@
-# i3 Config File
-# Author: Paradime
+# i3 config file
+# author: tilleyd
 
-####################
-# STARTUP PROGRAMS #
-####################
 
-# Set the wallpaper
-exec --no-startup-id nitrogen --restore
-# Compton for compositing
-exec --no-startup-id compton -CG -b
-# Start conky if you really want to
-#exec --no-startup-id conky -c ~/.conky/classic
-# Set up multiple monitors
-exec --no-startup-id xrandr --output HDMI2 --auto --primary --right-of eDP1
-exec --no-startup-id fullrgb
-# Set up the theme for rofi
-exec --no-startup-id xrdb ~/.config/rofi/config
-# Set the touchpad state
-exec --no-startup-id touchpad-update
-# Start polybar
-exec --no-startup-id polybar default
+#
+# startup programs
+#
 
-set $mod Mod1
 
-##############
-# APPEARANCE #
-##############
+exec --no-startup-id ~/.config/i3/autostart
+
+
+#
+# appearance
+#
+
 
 # set up a border with no title bar
-new_window pixel 2
-for_window [class=".*"] border pixel 2
+new_window pixel 1
+for_window [class=".*"] border pixel 1
 
 # gaps setup
 gaps inner 15
-gaps outer 30
+gaps outer 0
+
+# custom window colors
+#                       border    back      fore    ch-bord
+client.focused          #5294e2ff #5294e2ff #020100 #5294e2ff
+client.focused_inactive #00000000 #00000000 #afafaf #00000000
+client.unfocused        #00000000 #00000000 #afafaf #00000000
+
+# window titles font
+font pango:Hack 11
+
+
+#
+# mouse behaviour
+#
+
 
 # disable follow mouse focus
 focus_follows_mouse no
 
-# custom window colors
-#                       border  back    fore    ch-bord
-client.focused          #0e74b1 #0e74b1 #020100 #0e74b1
-client.focused_inactive #222222 #222222 #afafaf #222222
-client.unfocused        #222222 #222222 #afafaf #222222
-client.urgent           #c10004 #900000 #ffffff #900000
-# client.placeholder
-# client.background
+# mouse+mod to drag floating windows
+floating_modifier $mod
 
-# Start applets for the status bar
-exec --no-startup-id nm-applet
 
-################
-# KEY BINDINGS #
-################
+#
+# key bindings
+#
+
+
+set $mod Mod1
+
+# application shortcuts
+bindsym $mod+t exec terminator
+bindsym $mod+c exec thunar
+bindsym $mod+m exec spotify
 
 # media key binds
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
+
 # brightness key binds
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+
 # touchpad toggle
 bindsym XF86TouchpadToggle exec --no-startup-id touchpad-toggle
+
 # media player controls exec playerctl play
 #bindsym XF86AudioPlay exec playerctl pause
 #bindsym XF86AudioPause exec playerctl next
 #bindsym XF86AudioNext exec playerctl previous
-
-# Font for window titles and bar, unless specified differently
-font pango:Inconsolata 11
-
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# useful application start binds
-bindsym $mod+Return exec terminator
-bindsym $mod+c exec terminator -x ranger
-bindsym $mod+m exec terminator -x cmus
 
 # kill focused window
 bindsym $mod+q kill
@@ -159,12 +154,8 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Are you sure you want to log out?' -b 'Yes' 'i3-msg exit'"
+# i3 & system options menu
+bindsym $mod+Shift+e exec ~/.config/i3/system
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

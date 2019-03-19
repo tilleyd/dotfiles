@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# i3 system menu script
+# author: tilleyd
+
+options='poweroff|reboot|i3-exit|i3-reload|i3-restart'
+result=`echo $options | rofi -sep '|' -dmenu -p "action"`
+case $result in
+    "poweroff") poweroff ;;
+    "reboot") reboot ;;
+    "i3-exit") i3-msg "exit" ;;
+    "i3-reload") i3-msg "reload" ;;
+    "i3-restart") i3-msg "restart" ;;
+    *) rofi -e "invalid command" ;;
+esac

@@ -1,0 +1,35 @@
+# i3 autostart config
+# author: tilleyd
+
+#
+# startup applications
+#
+
+# set the wallpaper
+nitrogen --restore &
+
+# run compositor
+compton --config ~/.config/compton.conf -CG -b &
+
+# panel
+polybar default &
+
+# panel applets
+volumeicon &
+cbatticon &
+nm-applet &
+blueberry-tray &
+
+#
+# configurations
+#
+
+# set up multiple monitors
+xrandr --output HDMI2 --auto --primary --right-of eDP1
+fullrgb
+
+# set the touchpad to the correct state
+touchpad-update
+
+# enable numlock
+numlockx
