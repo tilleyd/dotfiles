@@ -1,0 +1,68 @@
+! ~/.Xresources
+! autor: tilleyd
+
+!
+! behaviour
+!
+
+URxvt*termName:             rxvt-unicode-256color
+URxvt*hold:                 false
+URxvt*scrollTtyKeypress:    true
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     false
+URxvt*secondaryScreen:      true
+URxvt*secondaryScroll:      true
+URxvt*skipScroll:           true
+URxvt*print-pipe:           cat > $HOME/$(echo urxvt.dump.$(date +'%Y%M%d%H%m%S'))
+URxvt*saveLines:            1000
+URxvt*url-launcher:         firefox
+
+!
+! colors
+!
+
+URxvt*background:   #2b303b
+URxvt*foreground:   #e8e8e8
+
+URxvt*color0:       #1c1f26
+URxvt*color1:       #bf616a
+URxvt*color2:       #a3be8c
+URxvt*color3:       #ebcb8b
+URxvt*color4:       #8fa1b3
+URxvt*color5:       #b48ead
+URxvt*color6:       #96b5b4
+URxvt*color7:       #c0c5ce
+URxvt*color8:       #65737e
+URxvt*color9:       #bf616a
+URxvt*color10:      #a3be8c
+URxvt*color11:      #ebcb8b
+URxvt*color12:      #8fa1b3
+URxvt*color13:      #b48ead
+URxvt*color14:      #96b5b4
+URxvt*color15:      #eff1f5
+
+URxvt*transparent:  false
+URxvt*fading:       0
+
+URxvt*cursorColor:  #8fa1b3
+
+!
+! fonts
+!
+
+URxvt*font:             xft:Hack-11
+URxvt*boldFont:         xft:Hack-11
+URxvt*italicFont:       xft:Hack-11
+URxvt*boldItalicFont:   xft:Hack-11
+
+!
+! appearance
+!
+
+URxvt*internalBorder:   4
+URxvt*scrollBar:        false
+URxvt*cursorBlink:      true
+
+URxvt*buffered:         true
+URxvt*lineSpace:        0
+URxvt*letterSpace:      0

@@ -3,4 +3,34 @@
 # bspwm autostart
 # author: tilleyd
 
+# set up multiple monitors
+if xrandr | grep "HDMI2 connected" > /dev/null;
+then
+    xrandr --output HDMI2 --auto --primary --output eDP1 --off
+    xrandr --output HDMI2 --set "Broadcast RGB" "Full"
+fi
+
+# set the touchpad to the correct state
+touchpad-update
+
+# enable numlock
+numlockx
+
+#
+# startup applications
+#
+
+# set the wallpaper
+nitrogen --restore &
+
+# run compositor
+compton --config ~/.config/compton.conf -CG -b &
+
+# panel
 polybar default &
+
+# panel applets
+volumeicon &
+cbatticon &
+nm-applet &
+blueberry-tray &

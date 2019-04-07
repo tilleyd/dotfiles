@@ -13,13 +13,15 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'shiracamus/vim-syntax-x86-objdump-d'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 call plug#end()
 
 colorscheme custom
 syntax on
 
 " set up vimtex
-let g:vimtex_view_general_viewer='zathura'
+let g:vimtex_view_general_viewer='atril'
 autocmd FileType tex setlocal wrap textwidth=0
 autocmd FileType tex match
 
@@ -70,6 +72,8 @@ set scrolloff=10
 " more natural splitting
 set splitbelow
 set splitright
+" split bar character
+set fillchars+=vert:\ 
 
 " switch assembly syntax to use nasm syntax
 " instead of AT&T syntax
@@ -87,11 +91,17 @@ nnoremap <C-b> :NERDTreeToggle<CR>
 " gitgutter setup
 let g:gitgutter_sign_added='|'
 let g:gitgutter_sign_modified='|'
-let g:gitgutter_sign_reomved='|'
+let g:gitgutter_sign_removed='|'
 let g:gitgutter_sign_removed_first_line='|'
 let g:gitgutter_sign_modified_removed='|'
 
-" custom statusline
+" snippets setup
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+
+" custom status
 set laststatus=2
 set statusline=\ %t
 set statusline+=%{&readonly?'\ ':!&modifiable?'\ ':''}
@@ -101,5 +111,5 @@ set statusline+=%=
 set statusline+=%-14.(%l:%c%V%)
 set statusline+=\ %{&filetype!=#''?&filetype:'none'}
 set statusline+=\ %4p%%\ 
-hi StatusLine ctermbg=none ctermfg=gray
-hi StatusLineNC ctermbg=none ctermfg=black
+hi StatusLine   ctermbg=black   ctermfg=white
+hi StatusLineNC ctermbg=black   ctermfg=gray
