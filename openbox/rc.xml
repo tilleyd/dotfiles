@@ -29,7 +29,7 @@ AUTHOR: Duncan Tilley
 	THEME SETTINGS
 	-->
   <theme>
-    <name>apollo</name>
+    <name>Arc-Darker</name>
     <titleLayout>IMC</titleLayout>
     <!--
 		N: window icon
@@ -145,24 +145,14 @@ AUTHOR: Duncan Tilley
         <command>thunar</command>
       </action>
     </keybind>
-    <keybind key="A-Return">
+    <keybind key="A-t">
       <action name="Execute">
-        <command>termite</command>
+        <command>terminator</command>
       </action>
     </keybind>
     <keybind key="A-e">
       <action name="Execute">
         <command>firefox</command>
-      </action>
-    </keybind>
-    <keybind key="A-m">
-      <action name="Execute">
-        <command>termite -e ncmpcpp</command>
-      </action>
-    </keybind>
-    <keybind key="A-t">
-      <action name="Execute">
-        <command>i3lock-fancy</command>
       </action>
     </keybind>
     <!-- SPECIAL & MEDIA KEYS -->

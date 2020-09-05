@@ -4,7 +4,7 @@
 [options]
 allow_bold = false
 audible_bell = false
-font = Tamzen 12
+font = Hack 11
 icon_name = terminal
 mouse_autohide = true
 scroll_on_output = false
@@ -14,27 +14,27 @@ urgent_on_bell = false
 cursor_shape = block
 
 [colors]
-foreground = #c0c5ce
-background = #2b303b
+foreground = #abb2bf
+background = #2f343f
 #background = rgba(43, 48, 59, 0.9)
 
 # Colors are in order gray, red, green, yellow, blue, magenta, cyan, white
 # 0-7 are dark and 8-15 are light
-color0 = #1c1f26
-color1 = #bf616a
-color2 = #a3be8c
-color3 = #ebcb8b
-color4 = #8fa1b3
-color5 = #b48ead
-color6 = #96b5b4
-color7 = #c0c5ce
-color8 = #65737e
-color9 = #bf616a
-color10 = #a3be8c
-color11 = #ebcb8b
-color12 = #8fa1b3
-color13 = #b48ead
-color14 = #96b5b4
-color15 = #eff1f5
+color0 = #282c34
+color1 = #be5046
+color2 = #98c379
+color3 = #d19a66
+color4 = #61afef
+color5 = #c678dd
+color6 = #56b6c2
+color7 = #abb2bf
+color8 = #4b5263
+color9 = #e06c75
+color10 = #98c379
+color11 = #e5c07b
+color12 = #61afef
+color13 = #c678dd
+color14 = #56b6c2
+color15 = #abb2bf
 
 # vim: ft=dosini cms=#%s

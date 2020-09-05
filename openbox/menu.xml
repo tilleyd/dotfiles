@@ -14,9 +14,9 @@
                     <execute>speedcrunch</execute>
                 </action>
             </item>
-            <item label="Termite">
+            <item label="Terminator">
                 <action name="Execute">
-                    <execute>termite</execute>
+                    <execute>terminator</execute>
                 </action>
             </item>
             <item label="Thunar">
@@ -29,7 +29,7 @@
         <menu id="games" label="Games">
             <item label="Minecraft">
                 <action name="Execute">
-                    <execute>minecraft</execute>
+                    <execute>multimc</execute>
                 </action>
             </item>
             <item label="Powder Toy">
@@ -271,6 +271,12 @@
         <menu id="session" label="Session">
             <item label="Logout">
                 <action name="Exit"/>
+            </item>
+            <item label="Logout (Toggle GPU)">
+                <action name="Execute">
+                    <prompt>Are you sure you want to log out and toggle the GPU power?</prompt>
+                    <execute>gpu-toggle</execute>
+                </action>
             </item>
             <item label="Reboot">
                 <action name="Execute">

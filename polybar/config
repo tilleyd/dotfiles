@@ -6,8 +6,8 @@ margin-top = 58
 margin-bottom = 0
 
 [bar/default]
-monitor = HDMI2
-monitor-fallback = eDP1
+#monitor = HDMI2
+#monitor-fallback = eDP1
 #override-redirect = true
 wm-restack = i3
 width = 100%
@@ -42,7 +42,7 @@ font-2 = Material Icons:size=10;2
 
 underline-size = 0
 
-modules-left = cpu memory temperature
+modules-left = cpu memory temperature gpuindicator
 modules-center = i3 bspwm
 modules-right = date backlight
 
@@ -322,5 +322,10 @@ label-occupied = "   %name%   "
 label-occupied-foreground = #888888
 label-empty = "   %name%   "
 label-empty-foreground = #222222
+
+[module/gpuindicator]
+type = custom/script
+exec = ~/.config/polybar/gpuindicator.sh
+interval = 60
 
 ; vim:ft=dosini
