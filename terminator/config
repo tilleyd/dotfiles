@@ -1,0 +1,28 @@
+[global_config]
+[keybindings]
+  go_up = <Primary>k
+  go_down = <Primary>j
+  go_left = <Primary>h
+  go_right = <Primary>l
+[profiles]
+  [[default]]
+    allow_bold = False
+    icon_bell = False
+    background_color = "#2f343f"
+    cursor_color = "#aaaaaa"
+    font = Hack 11
+    foreground_color = "#abb2bf"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_lines = 1024
+    palette = "#282c34:#be5046:#98c379:#d19a66:#61afef:#c678dd:#56b6c2:#abb2bf:#4b5263:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#abb2bf"
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]

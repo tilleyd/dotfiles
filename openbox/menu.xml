@@ -25,21 +25,50 @@
                 </action>
             </item>
         </menu>
+        <!-- ENGINEERING -->
+        <menu id="engineering" label="Engineering">
+            <item label="FreeeCad">
+                <action name="Execute">
+                    <execute>freecad</execute>
+                </action>
+            </item>
+            <item label="KiCad">
+                <action name="Execute">
+                    <execute>kicad</execute>
+                </action>
+            </item>
+        </menu>
         <!-- GAMES -->
         <menu id="games" label="Games">
+            <item label="Doom">
+                <action name="Execute">
+                    <execute>gzdoom</execute>
+                </action>
+            </item>
             <item label="Minecraft">
                 <action name="Execute">
                     <execute>multimc</execute>
                 </action>
             </item>
-            <item label="Powder Toy">
-                <action name="Execute">
-                    <execute>powder-toy</execute>
-                </action>
-            </item>
             <item label="Steam">
                 <action name="Execute">
                     <execute>steam-runtime</execute>
+                </action>
+            </item>
+            <separator/>
+            <item label="NES">
+                <action name="Execute">
+                    <execute>fceux</execute>
+                </action>
+            </item>
+            <item label="SNES">
+                <action name="Execute">
+                    <execute>zsnes</execute>
+                </action>
+            </item>
+            <item label="Game Boy">
+                <action name="Execute">
+                    <execute>visualboyadvance-m</execute>
                 </action>
             </item>
         </menu>
@@ -68,6 +97,11 @@
         </menu>
         <!-- INTERNET -->
         <menu id="internet" label="Internet">
+            <item label="Discord">
+                <action name="Execute">
+                    <execute>discord</execute>
+                </action>
+            </item>
             <item label="Firefox">
                 <action name="Execute">
                     <execute>firefox</execute>
@@ -106,6 +140,11 @@
                     <execute>audacity</execute>
                 </action>
             </item>
+            <item label="Spotify">
+                <action name="Execute">
+                    <execute>spotify</execute>
+                </action>
+            </item>
             <item label="VLC">
                 <action name="Execute">
                     <execute>vlc</execute>
@@ -130,9 +169,19 @@
                     <execute>libreoffice</execute>
                 </action>
             </item>
+            <item label="Mendeley">
+                <action name="Execute">
+                    <execute>mendeleydesktop</execute>
+                </action>
+            </item>
             <item label="MuseScore">
                 <action name="Execute">
                     <execute>musescore</execute>
+                </action>
+            </item>
+            <item label="Obsidian">
+                <action name="Execute">
+                    <execute>obsidian</execute>
                 </action>
             </item>
             <item label="Typora">
@@ -143,14 +192,14 @@
         </menu>
         <!-- PROGRAMMING -->
         <menu id="programming" label="Programming">
-            <item label="Android Studio">
+            <item label="Arduino IDE">
                 <action name="Execute">
-                    <execute>androidstudio</execute>
+                    <execute>arduino</execute>
                 </action>
             </item>
-            <item label="Atom">
+            <item label="Godot">
                 <action name="Execute">
-                    <execute>atom</execute>
+                    <execute>godot</execute>
                 </action>
             </item>
             <item label="Visual Studio Code">
@@ -209,6 +258,11 @@
             <item label="Dropbox">
                 <action name="Execute">
                     <execute>dropbox</execute>
+                </action>
+            </item>
+            <item label="Logbook">
+                <action name="Execute">
+                    <execute>terminator -x logbook</execute>
                 </action>
             </item>
             <item label="VirtualBox">

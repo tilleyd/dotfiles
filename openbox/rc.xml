@@ -186,6 +186,11 @@ AUTHOR: Duncan Tilley
         <command>xbacklight -dec 10</command>
       </action>
     </keybind>
+    <keybind key="Print">
+      <action name="Execute">
+        <command>deepin-screenshot</command>
+      </action>
+    </keybind>
     <!-- DESKTOP SWITCHING -->
     <keybind key="A-1">
       <action name="GoToDesktop">
@@ -234,7 +239,10 @@ AUTHOR: Duncan Tilley
     <keybind key="A-f">
       <action name="ToggleMaximize"/>
     </keybind>
-    <keybind key="A-Right">
+    <keybind key="A-F11">
+      <action name="ToggleFullscreen"/>
+    </keybind>
+    <keybind key="A-C-Right">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>1/2</x>
@@ -243,7 +251,7 @@ AUTHOR: Duncan Tilley
         <height>100%</height>
       </action>
     </keybind>
-    <keybind key="A-Left">
+    <keybind key="A-C-Left">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <x>0</x>
@@ -252,14 +260,14 @@ AUTHOR: Duncan Tilley
         <height>100%</height>
       </action>
     </keybind>
-    <keybind key="A-Up">
+    <keybind key="A-C-Up">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <y>0</y>
         <height>50%</height>
       </action>
     </keybind>
-    <keybind key="A-Down">
+    <keybind key="A-C-Down">
       <action name="UnmaximizeFull"/>
       <action name="MoveResizeTo">
         <y>1/2</y>

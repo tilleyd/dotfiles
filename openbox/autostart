@@ -27,6 +27,9 @@ volumeicon &
 
 # set up multiple monitors
 #xrandr --output HDMI2 --auto --primary --right-of eDP1
+screen-layout
+# disable screen timeout
+xset s off -dpms
 #fullrgb
 # set the rofi theme
 xrdb ~/.config/rofi/config

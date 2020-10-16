@@ -23,5 +23,8 @@ alias su='su -p'
 export EDITOR="/usr/bin/nvim"
 export XDG_CONFIG_HOME="$HOME/.config"
 
+# ssh
+eval $(keychain --eval --quiet)
+
 # print the date
 #echo `date +"Started at %F %H:%M"` in `pwd`
