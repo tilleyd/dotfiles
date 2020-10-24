@@ -17,9 +17,9 @@ plank &
 #tint2 &
 # various panel applets
 #blueman-applet &
-cbatticon &
+#cbatticon &
 nm-applet &
-volumeicon &
+pa-applet &
 
 ###
 # CONFIGURATIONS
@@ -27,13 +27,13 @@ volumeicon &
 
 # set up multiple monitors
 #xrandr --output HDMI2 --auto --primary --right-of eDP1
-screen-layout
+#screen-layout
 # disable screen timeout
 xset s off -dpms
 #fullrgb
 # set the rofi theme
-xrdb ~/.config/rofi/config
+#xrdb ~/.config/rofi/config
 # set the touchpad to the correct state
-touchpad-update
+#touchpad-update
 # enable numlock
 numlockx

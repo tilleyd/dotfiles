@@ -29,7 +29,7 @@ AUTHOR: Duncan Tilley
 	THEME SETTINGS
 	-->
   <theme>
-    <name>Arc-Darker</name>
+    <name>Custom</name>
     <titleLayout>IMC</titleLayout>
     <!--
 		N: window icon
@@ -43,37 +43,37 @@ AUTHOR: Duncan Tilley
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Source Sans Pro</name>
+      <name>Open Sans</name>
       <size>12</size>
       <weight>Bold</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveWindow">
-      <name>Source Sans Pro</name>
+      <name>Open Sans</name>
       <size>12</size>
       <weight>Bold</weight>
       <slant>Normal</slant>
     </font>
     <font place="MenuHeader">
-      <name>Source Sans Pro</name>
+      <name>Open Sans</name>
       <size>10</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="MenuItem">
-      <name>Source Sans Pro</name>
+      <name>Open Sans</name>
       <size>10</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Source Sans Pro</name>
+      <name>Open Sans</name>
       <size>10</size>
       <weight>Bold</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Source Sans Pro</name>
+      <name>Open Sans</name>
       <size>10</size>
       <weight>Bold</weight>
       <slant>Normal</slant>
@@ -156,6 +156,26 @@ AUTHOR: Duncan Tilley
       </action>
     </keybind>
     <!-- SPECIAL & MEDIA KEYS -->
+    <keybind key="XF86AudioPlay">
+      <action name="Execute">
+        <command>playerctl play-pause</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioStop">
+      <action name="Execute">
+        <command>playerctl stop</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute">
+        <command>playerctl next</command>
+      </action>
+    </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute">
+        <command>playerctl previous</command>
+      </action>
+    </keybind>
     <keybind key="XF86TouchpadToggle">
       <action name="Execute">
         <command>touchpad-toggle</command>

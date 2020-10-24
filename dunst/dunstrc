@@ -4,7 +4,7 @@
 [global]
     font = "OpenSans 12"
     allow_markup = yes
-    format = "%s\n<i>%b</i>"
+    format = "<b>%s</b>\n%b"
     sort = yes
     indicate_hidden = yes
     alignment = center
@@ -29,7 +29,7 @@
 
 [frame]
     width = 8
-    color = "#1c1f2655"
+    color = "#00000055"
 
 [shortcuts]
     close = ctrl+space
@@ -38,17 +38,17 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#2f343fee"
+    background = "#09090Aee"
     foreground = "#e8e8e8"
     timeout = 20
 
 [urgency_normal]
-    background = "#2f343fee"
+    background = "#09090Aee"
     foreground = "#e8e8e8"
     timeout = 20
 
 [urgency_critical]
-    background = "#be5046ee"
+    background = "#9259FFee"
     foreground = "#e8e8e8"
     timeout = 0
 

@@ -79,6 +79,11 @@
                     <execute>blender</execute>
                 </action>
             </item>
+            <item label="Dia">
+                <action name="Execute">
+                    <execute>dia</execute>
+                </action>
+            </item>
             <item label="gColor2">
                 <action name="Execute">
                     <execute>gcolor2</execute>
@@ -265,6 +270,11 @@
                     <execute>terminator -x logbook</execute>
                 </action>
             </item>
+            <item label="TeamViewer">
+                <action name="Execute">
+                    <execute>teamviewer</execute>
+                </action>
+            </item>
             <item label="VirtualBox">
                 <action name="Execute">
                     <execute>virtualbox</execute>
@@ -313,6 +323,11 @@
             <item label="pavucontrol">
                 <action name="Execute">
                     <execute>pavucontrol</execute>
+                </action>
+            </item>
+            <item label="plank">
+                <action name="Execute">
+                    <execute>plank --preferences</execute>
                 </action>
             </item>
             <item label="tint2conf">
