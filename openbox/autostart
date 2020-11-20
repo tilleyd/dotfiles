@@ -12,6 +12,7 @@ picom -b --config ~/.config/picom.conf &
 # conky widgets
 #conky &
 # panels and docks
+#pomd.py &
 polybar default &
 plank &
 #tint2 &
@@ -20,6 +21,7 @@ plank &
 #cbatticon &
 nm-applet &
 pa-applet &
+redshift-gtk &
 
 ###
 # CONFIGURATIONS

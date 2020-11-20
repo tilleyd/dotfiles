@@ -202,14 +202,19 @@
                     <execute>arduino</execute>
                 </action>
             </item>
+            <item label="Code">
+                <action name="Execute">
+                    <execute>code</execute>
+                </action>
+            </item>
             <item label="Godot">
                 <action name="Execute">
                     <execute>godot</execute>
                 </action>
             </item>
-            <item label="Visual Studio Code">
+            <item label="Jupyter Lab">
                 <action name="Execute">
-                    <execute>code</execute>
+                    <execute>terminator -e jupyter-lab</execute>
                 </action>
             </item>
             <item label="PgAdmin4">
@@ -233,9 +238,9 @@
                 </action>
             </item>
             <separator/>
-            <item label="nvim">
+            <item label="vim">
                 <action name="Execute">
-                    <execute>termite -e nvim</execute>
+                    <execute>terminator -e vim</execute>
                 </action>
             </item>
         </menu>
