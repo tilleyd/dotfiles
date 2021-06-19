@@ -1,15 +1,16 @@
+! ~/.config/rofi/config
+! Author: tilleyd
 ! rofi config
-! author: tilleyd
 
 ! COLOR
 rofi.color-enabled:                  true
 rofi.opacity:                        100
 !                                    odd-back   foregr   even-back  sel-back   sel-for
-rofi.color-normal:                   #00000000, #c6cedb, #00000000, #ff5294e2, #ffffff
-rofi.color-urgent:                   #00000000, #ebcb8b, #00000000, #ff5294e2, #ffffff
-rofi.color-active:                   #00000000, #8fa1b3, #00000000, #ff5294e2, #ffffff
+rofi.color-normal:                   #00000000, #3e424d, #00000000, #ff5294e2, #ffffff
+rofi.color-urgent:                   #00000000, #3e424d, #00000000, #ff5294e2, #ffffff
+rofi.color-active:                   #00000000, #3e424d, #00000000, #ff5294e2, #ffffff
 !                                    backgr   border   element
-rofi.color-window:                   #3E424D, #3E424D, #070708
+rofi.color-window:                   #ffffff, #3E424D, #070708
 
 ! APPEARANCE
 rofi.font:                           Hack 11
@@ -29,7 +30,7 @@ rofi.line-margin:                    5
 
 ! POSITION
 rofi.location:                       0
-rofi.padding:                        5
+rofi.padding:                        16
 rofi.yoffset:                        0
 rofi.xoffset:                        0
 
