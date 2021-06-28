@@ -195,10 +195,10 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Create the tags for each screen
-    local tags = {"dev", "web", "doc", "chat", "muse", "srv", "gfx", "vid", "misc"}
+    local tags = {"dev", "web", "doc", "chat", "mus", "srv", "gfx", "vid", "misc"}
     local layouts = {
-        awful.layout.suit.spiral.dwindle,
         awful.layout.suit.tile,
+        awful.layout.suit.spiral.dwindle,
         awful.layout.suit.tile,
         awful.layout.suit.floating,
         awful.layout.suit.floating,
@@ -296,9 +296,9 @@ end)
 
 -- {{{ Mouse bindings
 root.buttons(gears.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
+    -- awful.button({ }, 3, function () mymainmenu:toggle() end),
+    -- awful.button({ }, 4, awful.tag.viewnext),
+    -- awful.button({ }, 5, awful.tag.viewprev)
 ))
 -- }}}
 
@@ -358,13 +358,13 @@ globalkeys = gears.table.join(
               {description = "increase master width factor", group = "layout"}),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
               {description = "decrease master width factor", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
+    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
+    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster(-1, nil, true) end,
               {description = "decrease the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1, nil, true)    end,
+    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol( 1, nil, true)    end,
               {description = "increase the number of columns", group = "layout"}),
-    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
+    awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol(-1, nil, true)    end,
               {description = "decrease the number of columns", group = "layout"}),
     awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
@@ -400,6 +400,14 @@ globalkeys = gears.table.join(
         end,
         {description = "web browser", group = "application"}
     ),
+    awful.key(
+        {modkey},
+        "t",
+        function()
+            awful.spawn("emacs")
+        end,
+        {description = "emacs", group = "application"}
+    ),
 
     -- Media keys
     awful.key(
@@ -419,6 +427,30 @@ globalkeys = gears.table.join(
         "XF86AudioMute",
         function() widgets.volume:toggle() end,
         {description = "mute volume", group = "media"}
+    ),
+    awful.key(
+        {},
+        "XF86AudioPlay",
+        function() awful.spawn("playerctl play-pause") end,
+        {description = "play audio", group = "media"}
+    ),
+    awful.key(
+        {},
+        "XF86AudioStop",
+        function() awful.spawn("playerctl stop") end,
+        {description = "stop audio", group = "media"}
+    ),
+    awful.key(
+        {},
+        "XF86AudioNext",
+        function() awful.spawn("playerctl next") end,
+        {description = "next track", group = "media"}
+    ),
+    awful.key(
+        {},
+        "XF86AudioPrev",
+        function() awful.spawn("playerctl previous") end,
+        {description = "previous track", group = "media"}
     ),
 
     -- Run menu

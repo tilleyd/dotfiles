@@ -8,6 +8,9 @@ function checkrun {
     fi
 }
 
+# disable screen blanking
+xset dpms 0 0 0 && xset -dpms && xset s noblank && xset s off
+
 checkrun picom
 checkrun nm-applet
 #checkrun cbatticon
