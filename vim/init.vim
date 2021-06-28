@@ -6,15 +6,13 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jiangmiao/auto-pairs'
 Plug 'lervag/vimtex'
-Plug 'leafgarland/typescript-vim'
-Plug 'tikhomirov/vim-glsl'
-Plug 'sophacles/vim-processing'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'shiracamus/vim-syntax-x86-objdump-d'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'Valloric/YouCompleteMe'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 call plug#end()
 
 colorscheme custom
@@ -97,9 +95,11 @@ let g:gitgutter_sign_modified_removed='|'
 
 " snippets setup
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetsDir="~/.config/nvim/UltiSnips"
+let g:UltiSnipsSnippetsDir="~/.config/nvim/snippets"
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
+
+source ~/.config/nvim/keys.vim
 
 " custom status
 set laststatus=2

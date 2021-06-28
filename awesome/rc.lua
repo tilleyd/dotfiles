@@ -34,6 +34,7 @@ local widgets = {
     cpu = require("widgets/cpu"),
     volume = require("widgets/volume"),
     ram = require("widgets/ram"),
+    brightness = require("widgets/brightness"),
 }
 
 -- {{{ Error handling
@@ -198,7 +199,7 @@ awful.screen.connect_for_each_screen(function(s)
     local tags = {"dev", "web", "doc", "chat", "mus", "srv", "gfx", "vid", "misc"}
     local layouts = {
         awful.layout.suit.tile,
-        awful.layout.suit.spiral.dwindle,
+        awful.layout.suit.tile,
         awful.layout.suit.tile,
         awful.layout.suit.floating,
         awful.layout.suit.floating,
@@ -251,22 +252,37 @@ awful.screen.connect_for_each_screen(function(s)
     --brightness = wibox.container.margin(brightness, 6, 6)
     --brightness = wibox.container.background(brightness, "#ff0000")
 
-    -- Create RAM widget
-    local ram = widgets.ram()
+    local primwidgets = nil
+    if s == screen.primary then
+        -- Create brightness widget
+        local brightness = widgets.brightness()
 
-    -- Create CPU widget
-    local cpu = widgets.cpu()
+        -- Create RAM widget
+        local ram = widgets.ram()
 
-    -- Create volume widget
-    local volume = widgets.volume()
+        -- Create CPU widget
+        local cpu = widgets.cpu()
 
-    -- Create clock widget
-    local clock = widgets.clock()
+        -- Create volume widget
+        local volume = widgets.volume()
 
-    -- Create the systray
-    local systray = wibox.widget.systray(true)
+        -- Create clock widget
+        local clock = widgets.clock()
 
-    systray = wibox.container.margin(systray, 6, 6, 2, 2, beautiful.bg_systray)
+        -- Create the systray
+        local systray = wibox.widget.systray(true)
+        systray = wibox.container.margin(systray, 6, 6, 2, 2, beautiful.bg_systray)
+
+        primwidgets = wibox.widget {
+            layout = wibox.layout.fixed.horizontal,
+            ram,
+            cpu,
+            brightness,
+            volume,
+            clock,
+            systray,
+        }
+    end
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s })
@@ -282,24 +298,19 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            -- brightness,
-            ram,
-            cpu,
-            volume,
-            clock,
-            systray,
+            primwidgets,
             s.mylayoutbox,
-        },
+        }
     }
 end)
 -- }}}
 
 -- {{{ Mouse bindings
-root.buttons(gears.table.join(
-    -- awful.button({ }, 3, function () mymainmenu:toggle() end),
-    -- awful.button({ }, 4, awful.tag.viewnext),
-    -- awful.button({ }, 5, awful.tag.viewprev)
-))
+-- root.buttons(gears.table.join(
+--     awful.button({ }, 3, function () mymainmenu:toggle() end),
+--     awful.button({ }, 4, awful.tag.viewnext),
+--     awful.button({ }, 5, awful.tag.viewprev)
+-- ))
 -- }}}
 
 -- {{{ Key bindings
@@ -358,13 +369,13 @@ globalkeys = gears.table.join(
               {description = "increase master width factor", group = "layout"}),
     awful.key({ modkey,           }, "h",     function () awful.tag.incmwfact(-0.05)          end,
               {description = "decrease master width factor", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster( 1, nil, true) end,
+    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster(-1, nil, true) end,
+    awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
               {description = "decrease the number of master clients", group = "layout"}),
-    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol( 1, nil, true)    end,
+    awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1, nil, true)    end,
               {description = "increase the number of columns", group = "layout"}),
-    awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol(-1, nil, true)    end,
+    awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1, nil, true)    end,
               {description = "decrease the number of columns", group = "layout"}),
     awful.key({ modkey,           }, "space", function () awful.layout.inc( 1)                end,
               {description = "select next", group = "layout"}),
@@ -388,7 +399,7 @@ globalkeys = gears.table.join(
         {modkey},
         "c",
         function()
-            awful.spawn("nemo")
+            awful.spawn("thunar")
         end,
         {description = "file explorer", group = "application"}
     ),
@@ -404,9 +415,9 @@ globalkeys = gears.table.join(
         {modkey},
         "t",
         function()
-            awful.spawn("emacs")
+            awful.spawn("alacritty -e vim")
         end,
-        {description = "emacs", group = "application"}
+        {description = "vim", group = "application"}
     ),
 
     -- Media keys
@@ -427,6 +438,18 @@ globalkeys = gears.table.join(
         "XF86AudioMute",
         function() widgets.volume:toggle() end,
         {description = "mute volume", group = "media"}
+    ),
+    awful.key(
+        {},
+        "XF86MonBrightnessUp",
+        function() widgets.brightness:inc(5) end,
+        {description = "increase brightness", group = "media"}
+    ),
+    awful.key(
+        {},
+        "XF86MonBrightnessDown",
+        function() widgets.brightness:dec(5) end,
+        {description = "decrease brightness", group = "media"}
     ),
     awful.key(
         {},

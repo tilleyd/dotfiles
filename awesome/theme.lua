@@ -6,6 +6,7 @@ local theme_assets = require("beautiful.theme_assets")
 local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
+local gears = require("gears")
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
 local icon_path = "~/.config/awesome/icons/"
@@ -30,7 +31,7 @@ theme.c_light = "#6b859e"
 theme.c_lighter = "#a6b5c5"
 
 theme.font          = "Sans 10"
-theme.font_mono     = "Hack 10"
+theme.font_mono     = "Hack 9.5"
 
 theme.bg_normal     = theme.c_background
 theme.bg_focus      = theme.c_dark
@@ -65,14 +66,16 @@ theme.taglist_bg_urgent   = theme.c_background
 theme.taglist_bg_volatile = theme.c_background
 
 -- Status widget colors
-theme.widget_bg_clock  = theme.c_background
-theme.widget_fg_clock  = theme.c_blue
-theme.widget_bg_volume = theme.c_background
-theme.widget_fg_volume = theme.c_yellow
-theme.widget_bg_cpu    = theme.c_background
-theme.widget_fg_cpu    = theme.c_magenta
-theme.widget_bg_ram    = theme.c_background
-theme.widget_fg_ram    = theme.c_green
+theme.widget_bg_clock      = theme.c_background
+theme.widget_fg_clock      = theme.c_blue
+theme.widget_bg_volume     = theme.c_background
+theme.widget_fg_volume     = theme.c_yellow
+theme.widget_bg_cpu        = theme.c_background
+theme.widget_fg_cpu        = theme.c_magenta
+theme.widget_bg_ram        = theme.c_background
+theme.widget_fg_ram        = theme.c_green
+theme.widget_bg_brightness = theme.c_background
+theme.widget_fg_brightness = theme.c_red
 
 -- Naughty theming
 theme.notification_fg  = theme.c_foreground_light
@@ -83,6 +86,11 @@ theme.notification_width        = 480
 theme.notification_max_width    = theme.notification_width
 theme.notification_max_height   = 240
 theme.notification_icon_size    = 128
+
+-- Snapper theming
+theme.snap_bg           = theme.c_blue
+theme.snap_shape        = gears.shape.rectangle
+theme.snap_border_width = 2
 
 -- There are other variable sets
 -- overriding the default one when
@@ -105,12 +113,6 @@ theme.notification_icon_size    = 128
 -- theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
 --     taglist_square_size, lighter
 -- )
-
--- Variables set for theming notifications:
--- notification_font
--- notification_[bg|fg]
--- notification_[width|height|margin]
--- notification_[border_color|border_width|shape|opacity]
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
