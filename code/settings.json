@@ -3,46 +3,82 @@
     "workbench.iconTheme": "material-icon-theme",
     "editor.fontFamily": "'Hack','Font Awesome 5 Free Regular','Font Awesome 5 Free Solid','Font Awesome 5 Brands Regular'",
     "editor.fontSize": 13,
-    "editor.minimap.enabled": false,
+    "editor.minimap.enabled": true,
+    "editor.minimap.renderCharacters": false,
+    "editor.minimap.maxColumn": 80,
     "editor.dragAndDrop": false,
     "editor.rulers": [
-        {"color": "#d9e0e4", "column": 80},
-        {"color": "#e2aab2", "column": 120}
+        {"column": 80},
+        {"column": 120},
     ],
     "editor.cursorSmoothCaretAnimation": false,
     "editor.smoothScrolling": true,
     "editor.acceptSuggestionOnEnter": "off",
-    "workspaceExplorer.workspaceStorageDirectory": "/home/duncan/Documents/Workspaces",
+    "workspaceExplorer.workspaceStorageDirectory": "/home/tilleyd/Documents/Workspaces",
     "autoDocstring.docstringFormat": "google",
     "python.formatting.provider": "black",
+    "git.ignoreMissingGitWarning": true,
+    "window.menuBarVisibility": "hidden",
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "jupyter.sendSelectionToInteractiveWindow": false,
+    "python.showStartPage": false,
+    "workbench.editor.untitled.hint": "hidden",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "cmake.configureOnOpen": false,
+    "workbench.tree.indent": 16,
+    "vim.easymotion": true,
+    "vim.useSystemClipboard": true,
+    "window.restoreWindows": "none",
+    "extensions.ignoreRecommendations": true,
+    "latex-workshop.view.pdf.viewer": "tab",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "jupyter.askForKernelRestart": false,
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "editor.minimap.showSlider": "always",
 
-    // color scheme
+    // Colour theme
+    "workbench.colorTheme": "Default Light+", // Use as basis
     "editor.tokenColorCustomizations": {
         "comments": "#a7a7a7",
-        "functions": "#a73ab8",
-        "keywords": "#0d54aa",
+        "functions": "#8614c9",
+        "keywords": "#00469b",
         "numbers": "#ca8b01",
-        "strings": "#499b0a",
-        "types": "#0d54aa",
-        "variables": "#c91e38",
+        "strings": "#357a00",
+        "types": "#c91e38",
+        "variables": "#3e4044",
         "textMateRules": []
     },
     "workbench.colorCustomizations": {
         // these seem to be all over the place, probably legacy, so I'm using
         // a color that works for light and dark backgrounds
         "foreground": "#939599",
-        "button.foreground": "#ffffff",
+        "button.foreground": "#efefef",
         "button.background": "#5294E2",
-        "icon.foreground": "#939599",
+        "icon.foreground": "#ffffff",
         "textLink.foreground": "#5294E2",
 
         "editor.background": "#ffffff",
-        "editor.foreground": "#3e4044",
+        "editor.foreground": "#0d0d0e",
         "editorGroupHeader.tabsBackground": "#2D303B",
         "editorCursor.foreground": "#5294E2",
-        "editorLineNumber.foreground": "#3e4044",
-        "editor.lineHighlightBackground": "#ffffff",
-        "editor.lineHighlightBorder": "#d9e0e4",
+        "editorLineNumber.foreground": "#0d0d0e",
+        "editor.lineHighlightBackground": "#f5f5f5",
+        "editor.lineHighlightBorder": "#f5f5f5",
         "editorGutter.background": "#F5F6F7",
         "editorIndentGuide.activeBackground": "#d9e0e4",
         "editorIndentGuide.background": "#d9e0e4",
@@ -79,10 +115,11 @@
         // "sideBarSectionHeader.border": "#5294E2",
         "sideBarTitle.foreground": "#c6cedb",
 
-        "gitDecoration.addedResourceForeground": "#ff0000",
+        "gitDecoration.addedResourceForeground": "#99e48e",
         "gitDecoration.untrackedResourceForeground": "#99e48e",
         "gitDecoration.conflictingResourceForeground": "#ff6f85",
-        "gitDecoration.modifiedResourceForeground": "#ffd57c",
+        "gitDecoration.modifiedResourceForeground": "#99e48e",
+        "gitDecoration.ignoredResourceForeground": "#828892",
 
         "activityBar.background": "#2F343F",
         "activityBar.activeBorder": "#5294E2",
@@ -109,6 +146,7 @@
         "list.focusForeground": "#ffffff",
         "list.highlightForeground": "#ffffff",
         "list.errorForeground": "#ff6f85",
+        "list.warningForeground": "#cca34a",
 
         "input.background": "#2F343F",
         "input.foreground": "#c6cedb",
@@ -142,6 +180,10 @@
         "panelTitle.activeForeground": "#ffffff",
         "panelTitle.inactiveForeground": "#82858B",
 
+        "minimap.background": "#ffffff",
+
+        "editorRuler.foreground": "#e6e6e6",
+
         "terminal.ansiBlack": "#16181b",
         "terminal.ansiRed": "#fe6d82",
         "terminal.ansiGreen": "#9fe252",
@@ -159,15 +201,6 @@
         "terminal.ansiBrightCyan": "#52cce2",
         "terminal.ansiBrightWhite": "#ffffff",
         "terminal.background": "#1d1f25",
-        "terminal.foreground": "#c6cedb"
+        "terminal.foreground": "#c6cedb",
     },
-    "git.ignoreMissingGitWarning": true,
-    "window.menuBarVisibility": "hidden",
-    "window.zoomLevel": 0,
-    "files.insertFinalNewline": true,
-    "workbench.colorTheme": "Default Light+",
-    "files.trimTrailingWhitespace": true,
-    "files.trimFinalNewlines": true,
-    "jupyter.sendSelectionToInteractiveWindow": false,
-    "python.showStartPage": false
 }
