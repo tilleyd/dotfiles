@@ -1,19 +1,7 @@
 # zsh config
 # author: tilleyd
 
-export ZSH=/usr/share/oh-my-zsh
-ZSH_THEME="dtys"
-DEFAULT_USER="tilleyd"
-
-# plugins list
-plugins=(
-  git
-)
-
-source $ZSH/oh-my-zsh.sh
-
 # some useful aliases
-alias vim='nvim'
 alias ls='ls --color=auto --group-directories-first'
 alias sudo='sudo '
 alias objdump='objdump -M intel'
@@ -25,6 +13,24 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 # ssh
 eval $(keychain --eval --quiet)
+
+# prompt
+autoload -U colors && colors
+local blue="%{$fg[blue]%}"
+local magenta="%{$fg[magenta]%}"
+local red="%{$fg[red]%}"
+local green="%{$fg[green]%}"
+local cyan="%{$fg[cyan]%}"
+local yellow="%{$fg[yellow]%}"
+local reset="%{$reset_color%}"
+local exit_code="%(?,, !$red%?$reset)"
+PROMPT="\
+%(#,$red,$blue)%n$reset\
+@$green%m$reset\
+ in \
+$magenta%3~$reset\
+$exit_code
+$blue > $reset"
 
 # print the date
 #echo `date +"Started at %F %H:%M"` in `pwd`
