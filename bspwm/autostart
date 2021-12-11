@@ -3,15 +3,20 @@
 # bspwm autostart
 # author: tilleyd
 
+# keybindings
+sxhkd &
+
 # set up multiple monitors
-if xrandr | grep "HDMI2 connected" > /dev/null;
+if xrandr | grep "HDMI-1 connected" > /dev/null;
 then
-    xrandr --output HDMI2 --auto --primary --output eDP1 --off
-    xrandr --output HDMI2 --set "Broadcast RGB" "Full"
+    xrandr --output HDMI-1 --auto --primary --right-of eDP-1
 fi
 
+# disable screen blanking
+xset dpms 0 0 0 && xset -dpms && xset s noblank && xset s off
+
 # set the touchpad to the correct state
-touchpad-update
+#touchpad-update
 
 # enable numlock
 numlockx
@@ -21,16 +26,15 @@ numlockx
 #
 
 # set the wallpaper
-nitrogen --restore &
+$HOME/.fehbg &
+#nitrogen --restore &
 
 # run compositor
-compton --config ~/.config/compton.conf -CG -b &
+picom &
 
 # panel
 polybar default &
 
 # panel applets
-volumeicon &
-cbatticon &
-nm-applet &
-blueberry-tray &
+#nm-applet &
+blueman-applet &
