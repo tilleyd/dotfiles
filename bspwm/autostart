@@ -18,23 +18,14 @@ xset dpms 0 0 0 && xset -dpms && xset s noblank && xset s off
 # set the touchpad to the correct state
 #touchpad-update
 
-# enable numlock
-numlockx
-
 #
 # startup applications
 #
 
-# set the wallpaper
-$HOME/.fehbg &
-#nitrogen --restore &
-
-# run compositor
+numlockx &
+setxkbmap -option caps:escape &
+nitrogen --restore &
 picom &
-
-# panel
 polybar default &
-
-# panel applets
 #nm-applet &
 blueman-applet &

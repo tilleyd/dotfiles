@@ -9,27 +9,43 @@
 
 # terminal emulator
 alt + Return
-    termite
+    kitty
+
+alt + shift + Return
+    kitty --class scratch
+
+# todo agenda
+alt + a
+    kitty --class scratch -e agenda
 
 # program launcher
 alt + d
-    rofi -show run
+    ~/.config/rofi/launcher.sh
+    #rofi -show run
+
+# window selection
+alt + Tab
+    rofi -show window
+
+# password manager
+alt + p
+    pass clip -r
+
+# power menu
+alt + shift + e
+    ~/.config/rofi/powermenu.sh
 
 # file manager
 alt + c
-    termite -e ranger
+    thunar
 
 # web browser
 alt + e
-    qutebrowser
+    firefox
 
-# mpd client
-alt + m
-    termite -e ncmpcpp
-
-# screen lock
-alt + shift + t
-    i3lock
+# text editor
+alt + r
+    run_nvui
 
 
 #
@@ -38,17 +54,22 @@ alt + shift + t
 
 
 {XF86AudioRaiseVolume, XF86AudioLowerVolume}
-    amixer sset Master unmute 5%{+,-}
+    amixer -D pulse sset Master unmute 5%{+,-}
 
 XF86AudioMute
-    amixer sset Master toggle
+    amixer -D pulse sset Master toggle
 
 {XF86MonBrightnessUp, XF86MonBrightnessDown}
-    xbacklight -{inc,dec} 10
+    light -{A,U} 5
 
-XF86TouchpadToggle
-    touchpad-toggle; notify-send "touchpad toggled"
+{XF86AudioPlay, XF86AudioStop, XF86AudioNext, XF86AudioPrev}
+    playerctl {play-pause,stop,next,previous}
 
+#XF86TouchpadToggle
+#    touchpad-toggle; notify-send "touchpad toggled"
+
+Print
+    scrot
 
 #
 # bspwm hotkeys
@@ -56,8 +77,9 @@ XF86TouchpadToggle
 
 
 # quit bspwm
-alt + shift + e
-    bspc quit
+# NOTE: Replaced with powermenu
+#alt + shift + e
+#    bspc quit
 
 # reload sxhkd config
 alt + shift + r
@@ -73,14 +95,13 @@ alt + shift + r
 alt + {_, shift +} q
     bspc node -{c,k}
 
-# swap the current with the largest
-alt + shift + f
-    bspc node -s biggest
-
 # set node flags
 alt + {f, t, w}
     bspc node -t {fullscreen,tiled,floating}
 
+# toggle between layouts
+alt + m
+    bspc desktop -l next
 
 #
 # bspwm node selection
@@ -88,12 +109,18 @@ alt + {f, t, w}
 
 
 # focus or move in direction
-alt + {_, shift + } {h, j, k, l}
-    bspc node -{f,s} {west,south,north,east}
+# alt + {_, shift + } {h, j, k, l}
+#     bspc node -{f,s} {west,south,north,east}
+alt + {_, shift + } {j, k}
+    bspc node -{f,s} {next.local.leaf,prev.local.leaf}
 
 # focus or send to desktop
 alt + {_, shift +} {1-9, 0}
-    bspc {desktop -f,node -d} '^{1-9,10}'
+    bspc {desktop -f,node -d} '^{1-9,10}' {,--follow}
+#alt + {h, l}
+#    bspc desktop -f {prev,next}
+#alt + shift + {h, l}
+#    bspc node -d {prev,next} --follow
 
 
 #

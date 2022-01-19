@@ -2,29 +2,37 @@
 ; author: tilleyd
 
 
+# NOTE: In some places these colors are referenced, and in other places the
+# color code is repeated. So if you change one of these colors, make sure
+# to find and replace all in the file.
 [colors]
+# Onedark
 background       = #282c34
-foreground       = #e8e8e8
+foreground       = #dcdfe4
 darker           = #141a1f
-dark             = #1a2128
-light            = #6b859e
-lighter          = #a6b5c5
-red              = #ff9191
-green            = #9acd68
-yellow           = #eda55d
-blue             = #7dbeff
-magenta          = #cb96ff
-cyan             = #6ecfcf
+lighter          = #6b859e
+red              = #e06c75
+green            = #98c379
+yellow           = #e5c07b
+blue             = #61afef
+magenta          = #c678dd
+cyan             = #56b6c2
+
+
+[settings]
+# module fallbacks
+format-margin = 0
+format-padding = 2
 
 
 [global/wm]
-margin-top = 0
-margin-bottom = 32
+margin-top = 32
+margin-bottom = 0
 
 
 [bar/base]
-#monitor = ${env:MONITOR:eDP-1}
-bottom = true
+monitor = ${env:MONITOR:eDP-1}
+bottom = false
 wm-restack = bspwm
 width = 100%
 height = 32
@@ -46,23 +54,20 @@ tray-detached = false
 tray-maxsize = 12
 tray-background = ${colors.darker}
 
-font-0 = Hack:size=10;0
-font-1 = Siji:style=Regular:size=12;0
+font-0 = Roboto Mono:antialis=true:pixelsize=11;2
+font-1 = "Font Awesome 5 Free:style=Solid:pixelsize=11;2"
+font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=11;1"
+font-3 = "Font Awesome 5 Brands:style=Solid:pixelsize=11;2"
+font-4 = monospace:pixelsize=10;0
 
 pseudo-transparency = false
-
-
-[settings]
-# module fallbacks
-format-margin = 0
-format-padding = 2
 
 
 [bar/default]
 inherit = bar/base
 modules-left = bspwm window-title
 #modules-center = bspwm
-modules-right = wireless-network cpu memory temperature backlight volume battery date
+modules-right = wireless-network cpu memory temperature backlight volume battery time
 
 
 [module/backlight]
@@ -71,9 +76,7 @@ card = intel_backlight
 use-actual-brightness = true
 label = %percentage:3%%
 
-format =  <label>
-format-foreground = ${colors.blue}
-format-background = ${colors.darker}
+format = %{B#61afef}%{F#282c34}  %{B- F-} <label>
 
 
 [module/battery]
@@ -83,31 +86,19 @@ battery = BAT1
 adapter = ADP1
 full-at = 100
 
-label-charging = %percentage%%
+label-charging = %{B#c678dd}%{F#282c34}  %{B- F-} %percentage%%
 label-discharging = %percentage%% %time%
-label-full = %percentage%%
+label-full = %{B#c678dd}%{F#282c34}  %{B- F-} %percentage%%
 
-#label-charging-foreground = #e8e8e8
-#label-discharging-foreground = #e8e8e8
-#label-full-foreground = #e8e8e8
+ramp-capacity-0 = %{B#e06c75}%{F#282c34}  %{B- F-}
+ramp-capacity-1 = %{B#e5c07b}%{F#282c34}  %{B- F-}
+ramp-capacity-2 = %{B#e5c07b}%{F#282c34}  %{B- F-}
+ramp-capacity-3 = %{B#c678dd}%{F#282c34}  %{B- F-}
+ramp-capacity-4 = %{B#c678dd}%{F#282c34}  %{B- F-}
 
-ramp-capacity-0 = 
-ramp-capacity-0-foreground = ${colors.red}
-ramp-capacity-1 = 
-ramp-capacity-1-foreground = ${colors.yellow}
-ramp-capacity-2 = 
-ramp-capacity-2-foreground = ${colors.magenta}
-
-format-charging =  <label-charging>
+format-charging = <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
-format-full =  <label-full>
-
-format-charging-foreground = ${colors.magenta}
-format-discharging-foreground = ${colors.magenta}
-format-full-foreground = ${colors.magenta}
-format-charging-background = ${colors.darker}
-format-discharging-background = ${colors.darker}
-format-full-background = ${colors.darker}
+format-full = <label-full>
 
 
 
@@ -115,21 +106,19 @@ format-full-background = ${colors.darker}
 type = internal/cpu
 interval = 0.5
 label = %percentage:3%%
-#format =  <label> <ramp-coreload>
-format =  <ramp-coreload>
-format-background = ${colors.darker}
-format-foreground = ${colors.blue}
+#format =  <label> <ramp-coreload>
+format = %{B#61afef}%{F#282c34}  %{B- F-} <ramp-coreload>
 
 ramp-coreload-spacing = 0
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 2
-ramp-coreload-0-foreground = ${colors.blue}
+ramp-coreload-0-foreground = ${colors.foreground}
 ramp-coreload-1 = ▂
 ramp-coreload-1-font = 2
-ramp-coreload-1-foreground = ${colors.blue}
+ramp-coreload-1-foreground = ${colors.foreground}
 ramp-coreload-2 = ▃
 ramp-coreload-2-font = 2
-ramp-coreload-2-foreground = ${colors.blue}
+ramp-coreload-2-foreground = ${colors.foreground}
 ramp-coreload-3 = ▄
 ramp-coreload-3-font = 2
 ramp-coreload-3-foreground = ${colors.green}
@@ -155,29 +144,25 @@ units = true
 label = %temperature-c:4%
 label-warn = %temperature-c:4%
 label-warn-foreground = ${colors.red}
-format =  <label>
-format-warn =  <label-warn>
-format-background = ${colors.darker}
-format-foreground = ${colors.magenta}
+format = %{B#c678dd}%{F#282c34}  %{B- F-} <label>
+format-warn =%{B#e06c75}%{F#282c34}  %{B- F-} <label-warn>
 
 
-[module/date]
+[module/time]
 type = internal/date
 date = %a %d %b
-time = %H:%M:%S
-label = %date% %time%
-format =  <label>
-format-background = ${colors.darker}
-format-foreground = ${colors.blue}
+time = %a %d %H:%M:%S
+# label = %date% %time%
+label = %time%
+format = %{B#61afef}%{F#282c34}  %{B- F-} <label>
 
 
 [module/memory]
 type = internal/memory
 interval = 2
-label = %percentage_used:2%% %percentage_swap_used:2%%
-format =  <label>
-format-background = ${colors.darker}
-format-foreground = ${colors.green}
+#label = %percentage_used:2%% %percentage_swap_used:2%%
+label = %percentage_used:3%%
+format = %{B#98c379}%{F#282c34}  %{B- F-} <label>
 
 
 [module/mpd]
@@ -210,7 +195,7 @@ bar-progress-empty-foreground = #44
 
 [module/window-title]
 type = internal/xwindow
-label = %title:0:80:…%
+label = %title:0:70:…%
 label-foreground = ${colors.foreground}
 
 
@@ -220,22 +205,11 @@ interface = wlo1
 interval = 2
 ping-interval = 10
 
-label-connected = ↓%downspeed% ↑%upspeed%
-label-disconnected = disconnected
-label-connected-foreground = ${colors.magenta}
-label-disconnected-foreground = ${colors.magenta}
-
-ramp-signal-0 = 
-ramp-signal-0-foreground = ${colors.red}
-ramp-signal-1 = 
-ramp-signal-1-foreground = ${colors.green}
-ramp-signal-2 = 
-ramp-signal-2-foreground = ${colors.green}
-
-format-connected = <ramp-signal> <label-connected>
-format-disconnected =  <label-disconnected>
-format-connected-background = ${colors.darker}
-format-disconnected-background = ${colors.darker}
+# label-connected =   %downspeed%  %upspeed%
+label-connected = %{B#c678dd}%{F#282c34}  %{B- F-}  %downspeed%
+label-disconnected = %{B#c678dd}%{F#282c34}  %{B- F-} disconnected
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
 
 
 [module/volume]
@@ -243,18 +217,12 @@ type = internal/pulseaudio
 use-ui-max = false  # scale to 100%, not 150%
 
 label-volume = %percentage:3%%
-# For some reason the muted label completely ignores formatting,
-# so this is as good as it gets.
-label-muted =  muted
-label-muted-foreground = ${colors.green}
-label-muted-background = ${colors.darker}
+label-muted = %{B#98c379}%{F#282c34}  %{B- F-} muted
 
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-format-volume = <ramp-volume> <label-volume>
-format-volume-background = ${colors.darker}
-format-volume-foreground = ${colors.green}
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+format-volume = %{B#98c379}%{F#282c34} <ramp-volume> %{B- F-} <label-volume>
 click-right = pavucontrol
 
 
@@ -263,18 +231,20 @@ type = internal/bspwm
 format = <label-state>
 format-padding = 0
 label-focused = " %name% "
-label-focused-foreground = ${colors.magenta}
+#label-focused-foreground = ${colors.magenta}
 label-focused-background = ${colors.darker}
-label-focused-underline = ${colors.green}
+label-focused-underline = ${colors.yellow}
 label-occupied = " %name% "
-label-occupied-foreground = ${colors.magenta}
+#label-occupied-foreground = ${colors.magenta}
 label-occupied-background = ${colors.darker}
-label-occupied-underline = ${colors.light}
+label-occupied-underline = ${colors.lighter}
 label-urgent = " %name% "
-label-urgent-foreground = ${colors.background}
-label-urgent-background = ${colors.yellow}
+#label-urgent-foreground = ${colors.background}
+label-urgent-background = ${colors.red}
 label-empty = " %name% "
-label-empty-foreground = ${colors.magenta}
+#label-empty-foreground = ${colors.magenta}
 label-empty-background = ${colors.darker}
 # If true, show only this monitor's desktops
 pin-workspaces = false
+
+# vim:ft=dosini
