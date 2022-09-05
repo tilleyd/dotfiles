@@ -14,15 +14,16 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="$VCS_PROMPT_SUFFIX"
 ZSH_THEME_GIT_PROMPT_DIRTY="$VCS_PROMPT_DIRTY"
 ZSH_THEME_GIT_PROMPT_CLEAN="$VCS_PROMPT_CLEAN"
 
-local exit_code="%(?,,!%{$fg[red]%}%?%{$reset_color%})"
+local newline=$'\n'
+local exit_code="%(?,,!%{$fg[red]%}%?%{$reset_color%}${newline})"
 
 # Prompt format
 PROMPT="\
+$exit_code\
 %(#,%{$fg[red]%}%n%{$reset_color%},%{$fg[blue]%}%n)\
 %{$fg[white]%}@\
 %{$fg[green]%}%m \
 %{$fg[white]%}in \
 %{$fg[magenta]%}%3~%{$reset_color%}\
-${git_info} \
- $exit_code
-%{$fg[blue]%} > %{$reset_color%}"
+${git_info}
+%{$fg[blue]%} λ %{$reset_color%}"
