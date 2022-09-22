@@ -1,41 +1,30 @@
-# OPENBOX AUTOSTART CONFIG
-# AUTHOR: tilleyd
+# openbox autostart config
+# author: tilleyd
 
-###
-# STARTUP APPLICATIONS
-###
+# disable screen blanking
+xset dpms 0 0 0 && xset -dpms && xset s noblank && xset s off
 
-# set the wallpaper
+# startup applications
+numlockx &
+#setxkbmap -option caps:escape &
 nitrogen --restore &
-# run the compositor
-picom -b --config ~/.config/picom.conf &
-# conky widgets
-#conky &
-# panels and docks
-#pomd.py &
-polybar default &
-plank &
-#tint2 &
+picom &
+tint2 &
+
 # various panel applets
-#blueman-applet &
-#cbatticon &
+blueman-applet &
+cbatticon &
 nm-applet &
 pa-applet &
-redshift-gtk &
-
-###
-# CONFIGURATIONS
-###
+#redshift-gtk &
 
 # set up multiple monitors
-#xrandr --output HDMI2 --auto --primary --right-of eDP1
-#screen-layout
-# disable screen timeout
-xset s off -dpms
-#fullrgb
-# set the rofi theme
-#xrdb ~/.config/rofi/config
-# set the touchpad to the correct state
-#touchpad-update
-# enable numlock
-numlockx
+# if xrandr | grep "HDMI-1 connected" > /dev/null;
+# then
+#     xrandr --output HDMI-1 --auto --primary --right-of eDP-1
+# fi
+
+# this isn't loaded for some reason
+source ~/.zshenv
+
+# vi: ft=bash

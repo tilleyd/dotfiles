@@ -1,18 +1,21 @@
 # zathura config
 # author: tilleyd
 
-set font "Gohu GohuFont 11"
+set font "Roboto Mono 10"
+
+set guioptions "sv"
 
 include theme
 
 set recolor "false"
 # set recolor-keephue "true"
 
-set page-padding 10
+set page-padding 5
 set scroll-wrap "false"
 set statusbar-home-tilde "true"
 
 set show-scrollbars "true"
+set selection-notification "false"
 
 map h scroll left
 map j scroll down

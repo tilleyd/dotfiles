@@ -30,7 +30,7 @@ AUTHOR: Duncan Tilley
 	-->
   <theme>
     <name>Arc-Darker</name>
-    <titleLayout>IMC</titleLayout>
+    <titleLayout>LIMC</titleLayout>
     <!--
 		N: window icon
 		L: window label (AKA title).
@@ -43,39 +43,39 @@ AUTHOR: Duncan Tilley
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>Open Sans</name>
-      <size>12</size>
-      <weight>Bold</weight>
+      <name>Roboto Light</name>
+      <size>10</size>
+      <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveWindow">
-      <name>Open Sans</name>
-      <size>12</size>
-      <weight>Bold</weight>
+      <name>Roboto Light</name>
+      <size>10</size>
+      <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="MenuHeader">
-      <name>Open Sans</name>
+      <name>Roboto Light</name>
       <size>10</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="MenuItem">
-      <name>Open Sans</name>
+      <name>Roboto Light</name>
       <size>10</size>
       <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>Open Sans</name>
+      <name>Roboto Light</name>
       <size>10</size>
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>Open Sans</name>
+      <name>Roboto Light</name>
       <size>10</size>
-      <weight>Bold</weight>
+      <weight>Normal</weight>
       <slant>Normal</slant>
     </font>
   </theme>
@@ -135,9 +135,14 @@ AUTHOR: Duncan Tilley
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
     <!-- APPLICATION SETTINGS -->
-    <keybind key="A-d">
+    <keybind key="A-r">
       <action name="Execute">
-        <command>rofi -show run</command>
+        <command>~/.config/rofi/launcher.sh</command>
+      </action>
+    </keybind>
+    <keybind key="A-p">
+      <action name="Execute">
+        <command>pass clip -r</command>
       </action>
     </keybind>
     <keybind key="A-c">
@@ -147,7 +152,7 @@ AUTHOR: Duncan Tilley
     </keybind>
     <keybind key="A-t">
       <action name="Execute">
-        <command>terminator</command>
+        <command>kitty</command>
       </action>
     </keybind>
     <keybind key="A-e">
@@ -159,6 +164,11 @@ AUTHOR: Duncan Tilley
     <keybind key="XF86AudioPlay">
       <action name="Execute">
         <command>playerctl play-pause</command>
+      </action>
+    </keybind>
+    <keybind key="XF86Calculator">
+      <action name="Execute">
+        <command>speedcrunch</command>
       </action>
     </keybind>
     <keybind key="XF86AudioStop">
@@ -198,17 +208,17 @@ AUTHOR: Duncan Tilley
     </keybind>
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>xbacklight -inc 10</command>
+        <command>light -A 5</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-        <command>xbacklight -dec 10</command>
+        <command>light -U 5</command>
       </action>
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>deepin-screenshot</command>
+        <command>flameshot gui</command>
       </action>
     </keybind>
     <!-- DESKTOP SWITCHING -->

@@ -4,9 +4,14 @@
         <separator label="Applications"/>
         <!-- ACCESSORIES -->
         <menu id="accessories" label="Accessories">
-            <item label="Mousepad">
+            <item label="Kitty">
                 <action name="Execute">
-                    <execute>mousepad</execute>
+                    <execute>kitty</execute>
+                </action>
+            </item>
+            <item label="Leafpad">
+                <action name="Execute">
+                    <execute>leafpad</execute>
                 </action>
             </item>
             <item label="SpeedCrunch">
@@ -14,27 +19,15 @@
                     <execute>speedcrunch</execute>
                 </action>
             </item>
-            <item label="Terminator">
-                <action name="Execute">
-                    <execute>terminator</execute>
-                </action>
-            </item>
             <item label="Thunar">
                 <action name="Execute">
                     <execute>thunar</execute>
                 </action>
             </item>
-        </menu>
-        <!-- ENGINEERING -->
-        <menu id="engineering" label="Engineering">
-            <item label="FreeeCad">
+            <separator/>
+            <item label="htop">
                 <action name="Execute">
-                    <execute>freecad</execute>
-                </action>
-            </item>
-            <item label="KiCad">
-                <action name="Execute">
-                    <execute>kicad</execute>
+                    <execute>kitty -e htop</execute>
                 </action>
             </item>
         </menu>
@@ -45,43 +38,48 @@
                     <execute>gzdoom</execute>
                 </action>
             </item>
+            <item label="Dwarf Fortress">
+                <action name="Execute">
+                    <execute>dwarffortress</execute>
+                </action>
+            </item>
+            <item label="Mari0">
+                <action name="Execute">
+                    <execute>mari0</execute>
+                </action>
+            </item>
             <item label="Minecraft">
                 <action name="Execute">
-                    <execute>multimc</execute>
+                    <execute>minecraft-launcher</execute>
+                </action>
+            </item>
+            <item label="Red Eclipse">
+                <action name="Execute">
+                    <execute>redeclipse</execute>
+                </action>
+            </item>
+            <item label="Xonotic">
+                <action name="Execute">
+                    <execute>xonotic</execute>
+                </action>
+            </item>
+            <separator/>
+            <item label="Lutris">
+                <action name="Execute">
+                    <execute>steam</execute>
                 </action>
             </item>
             <item label="Steam">
                 <action name="Execute">
-                    <execute>steam-runtime</execute>
-                </action>
-            </item>
-            <separator/>
-            <item label="NES">
-                <action name="Execute">
-                    <execute>fceux</execute>
-                </action>
-            </item>
-            <item label="SNES">
-                <action name="Execute">
-                    <execute>zsnes</execute>
-                </action>
-            </item>
-            <item label="Game Boy">
-                <action name="Execute">
-                    <execute>visualboyadvance-m</execute>
+                    <execute>steam</execute>
                 </action>
             </item>
         </menu>
         <!-- GRAPHICS -->
         <menu id="graphics" label="Graphics">
-            <item label="Blender">
+            <item label="digiKam">
                 <action name="Execute">
-                    <execute>blender</execute>
-                </action>
-            </item>
-            <item label="Dia">
-                <action name="Execute">
-                    <execute>dia</execute>
+                    <execute>digikam</execute>
                 </action>
             </item>
             <item label="gColor2">
@@ -99,9 +97,19 @@
                     <execute>inkscape</execute>
                 </action>
             </item>
+            <item label="Krita">
+                <action name="Execute">
+                    <execute>krita</execute>
+                </action>
+            </item>
         </menu>
         <!-- INTERNET -->
         <menu id="internet" label="Internet">
+            <item label="Chromium">
+                <action name="Execute">
+                    <execute>chromium</execute>
+                </action>
+            </item>
             <item label="Discord">
                 <action name="Execute">
                     <execute>discord</execute>
@@ -110,11 +118,6 @@
             <item label="Firefox">
                 <action name="Execute">
                     <execute>firefox</execute>
-                </action>
-            </item>
-            <item label="Google Chrome">
-                <action name="Execute">
-                    <execute>google-chrome-stable</execute>
                 </action>
             </item>
             <item label="qBitTorrent">
@@ -127,61 +130,35 @@
                     <execute>slack</execute>
                 </action>
             </item>
-            <item label="Telegram">
+            <item label="Teams">
                 <action name="Execute">
-                    <execute>telegram-desktop</execute>
+                    <execute>teams</execute>
+                </action>
+            </item>
+            <item label="Zoom">
+                <action name="Execute">
+                    <execute>zoom</execute>
                 </action>
             </item>
         </menu>
         <!-- MEDIA -->
         <menu id="media" label="Media">
-            <item label="Audacious">
-                <action name="Execute">
-                    <execute>audacious</execute>
-                </action>
-            </item>
-            <item label="Audacity">
-                <action name="Execute">
-                    <execute>audacity</execute>
-                </action>
-            </item>
             <item label="Spotify">
                 <action name="Execute">
                     <execute>spotify</execute>
                 </action>
             </item>
-            <item label="VLC">
+            <item label="Webcamoid">
                 <action name="Execute">
-                    <execute>vlc</execute>
-                </action>
-            </item>
-            <separator/>
-            <item label="ncmpcpp">
-                <action name="Execute">
-                    <execute>termite -e ncmpcpp</execute>
+                    <execute>webcamoid</execute>
                 </action>
             </item>
         </menu>
-        <!-- OFFICE -->
-        <menu id="office" label="Office">
-            <item label="Gummi">
+        <!-- PRODUCTIVITY -->
+        <menu id="productivity" label="Productivity">
+            <item label="HomeBank">
                 <action name="Execute">
-                    <execute>gummi</execute>
-                </action>
-            </item>
-            <item label="Libre Office">
-                <action name="Execute">
-                    <execute>libreoffice</execute>
-                </action>
-            </item>
-            <item label="Mendeley">
-                <action name="Execute">
-                    <execute>mendeleydesktop</execute>
-                </action>
-            </item>
-            <item label="MuseScore">
-                <action name="Execute">
-                    <execute>musescore</execute>
+                    <execute>homebank</execute>
                 </action>
             </item>
             <item label="Obsidian">
@@ -189,106 +166,60 @@
                     <execute>obsidian</execute>
                 </action>
             </item>
-            <item label="Typora">
+            <item label="Todoist">
                 <action name="Execute">
-                    <execute>typora</execute>
+                    <execute>todoist</execute>
+                </action>
+            </item>
+        </menu>
+        <!-- OFFICE -->
+        <menu id="office" label="Office">
+            <item label="Draw.io">
+                <action name="Execute">
+                    <execute>drawio</execute>
+                </action>
+            </item>
+            <item label="Libre Office">
+                <action name="Execute">
+                    <execute>libreoffice</execute>
+                </action>
+            </item>
+            <item label="MuseScore">
+                <action name="Execute">
+                    <execute>musescore</execute>
+                </action>
+            </item>
+            <item label="Xournal++">
+                <action name="Execute">
+                    <execute>xournalpp</execute>
+                </action>
+            </item>
+            <item label="Mendeley">
+                <action name="Execute">
+                    <execute>mendeley</execute>
                 </action>
             </item>
         </menu>
         <!-- PROGRAMMING -->
         <menu id="programming" label="Programming">
-            <item label="Arduino IDE">
-                <action name="Execute">
-                    <execute>arduino</execute>
-                </action>
-            </item>
-            <item label="Code">
-                <action name="Execute">
-                    <execute>code</execute>
-                </action>
-            </item>
             <item label="Godot">
                 <action name="Execute">
                     <execute>godot</execute>
                 </action>
             </item>
-            <item label="Jupyter Lab">
+            <item label="Jupyter Notebook">
                 <action name="Execute">
-                    <execute>terminator -e jupyter-lab</execute>
+                    <execute>kitty -e jupyter-notebook</execute>
                 </action>
             </item>
-            <item label="PgAdmin4">
+            <item label="Netron">
                 <action name="Execute">
-                    <execute>pgadmin4</execute>
+                    <execute>netron</execute>
                 </action>
             </item>
-            <item label="Postman">
+            <item label="VS Code">
                 <action name="Execute">
-                    <execute>postman</execute>
-                </action>
-            </item>
-            <item label="Processing">
-                <action name="Execute">
-                    <execute>processing</execute>
-                </action>
-            </item>
-            <item label="Spyder3">
-                <action name="Execute">
-                    <execute>spyder3</execute>
-                </action>
-            </item>
-            <separator/>
-            <item label="vim">
-                <action name="Execute">
-                    <execute>terminator -e vim</execute>
-                </action>
-            </item>
-        </menu>
-        <!-- SECURITY -->
-        <menu id="security" label="Security">
-            <item label="Wireshark">
-                <action name="Execute">
-                    <execute>wireshark</execute>
-                </action>
-            </item>
-            <item label="ZAProxy">
-                <action name="Execute">
-                    <execute>zaproxy</execute>
-                </action>
-            </item>
-            <separator/>
-            <item label="mitmproxy">
-                <action name="Execute">
-                    <execute>termite -e mitmproxy</execute>
-                </action>
-            </item>
-        </menu>
-        <!-- UTILITIES -->
-        <menu id="utilities" label="Utilities">
-            <item label="Dropbox">
-                <action name="Execute">
-                    <execute>dropbox</execute>
-                </action>
-            </item>
-            <item label="Logbook">
-                <action name="Execute">
-                    <execute>terminator -x logbook</execute>
-                </action>
-            </item>
-            <item label="TeamViewer">
-                <action name="Execute">
-                    <execute>teamviewer</execute>
-                </action>
-            </item>
-            <item label="VirtualBox">
-                <action name="Execute">
-                    <execute>virtualbox</execute>
-                </action>
-            </item>
-            <separator/>
-            <item label="htop">
-                <action name="Execute">
-                    <execute>termite -e htop</execute>
+                    <execute>code</execute>
                 </action>
             </item>
         </menu>
@@ -330,11 +261,6 @@
                     <execute>pavucontrol</execute>
                 </action>
             </item>
-            <item label="plank">
-                <action name="Execute">
-                    <execute>plank --preferences</execute>
-                </action>
-            </item>
             <item label="tint2conf">
                 <action name="Execute">
                     <execute>tint2conf</execute>
@@ -345,12 +271,6 @@
         <menu id="session" label="Session">
             <item label="Logout">
                 <action name="Exit"/>
-            </item>
-            <item label="Logout (Toggle GPU)">
-                <action name="Execute">
-                    <prompt>Are you sure you want to log out and toggle the GPU power?</prompt>
-                    <execute>gpu-toggle</execute>
-                </action>
             </item>
             <item label="Reboot">
                 <action name="Execute">

@@ -18,11 +18,11 @@
 (setq scroll-margin 10)
 (setq scroll-step 1)
 
-(set-face-attribute 'default nil :font "Hack" :height 96)
+(set-face-attribute 'default nil :font "RobotoMono Nerd Font" :height 112)
 
-(set-face-attribute 'fixed-pitch nil :font "Hack" :height 96)
+(set-face-attribute 'fixed-pitch nil :font "RobotoMono Nerd Font" :height 112)
 
-(set-face-attribute 'fixed-pitch nil :font "Open Sans" :weight 'regular :height 96)
+(set-face-attribute 'fixed-pitch nil :font "Roboto" :weight 'regular :height 112)
 
 ;; Display line numbers
 (global-display-line-numbers-mode t)
@@ -45,7 +45,7 @@
 ;; (use-package zerodark-theme
 ;;   :init (load-theme 'zerodark t))
 (use-package doom-themes
-  :init (load-theme 'doom-dracula t))
+  :init (load-theme 'doom-one t))
 
 ;; Set up package loading
 (require 'package)
@@ -239,8 +239,7 @@
   ("C-c p" . projectile-command-map)
   :init
   (setq projectile-project-search-path '("~/Projects"
-					 "~/Documents/Notes"
-					 "~/Documents/Agenda")))
+                                     "~/Work/Leonicorn/NFT Marketplace")))
 
 ;; Provide better M-o options in project lists
 (use-package counsel-projectile
@@ -315,7 +314,7 @@
   		  (org-level-6 . 1.1)
   		  (org-level-7 . 1.1)
   		  (org-level-8 . 1.1)))
-    (set-face-attribute (car face) nil :font "Hack" :weight 'regular :height (cdr face))))
+    (set-face-attribute (car face) nil :font "RobotoMono Nerd Font" :weight 'regular :height (cdr face))))
 
 (use-package org-bullets
   :after org
@@ -347,6 +346,8 @@
   :hook
   (c-mode . lsp-deferred)
   (c++-mode . lsp-deferred)
+  (python-mode . lsp-deferred)
+  (js-mode . lsp-deferred)
   :config
   (lsp-enable-which-key-integration t))
 
@@ -382,3 +383,5 @@
 			    (c-set-offset 'arglist-close '-)))
 
 
+
+(use-package solidity-mode)
