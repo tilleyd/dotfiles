@@ -51,6 +51,9 @@
         org-startup-with-inline-images t
         +org-capture-notes-file "inbox.org"))
 
+(after! org-journal
+  (setq org-journal-date-format "%a %e %b %Y"))
+
 (after! org
   (dolist (face '((org-level-1 . 1.2)
                   (org-level-2 . 1.1)
