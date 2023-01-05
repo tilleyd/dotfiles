@@ -1,0 +1,66 @@
+colorscheme custom
+syntax on
+
+set backspace=indent,eol,start
+set shiftwidth=4
+set nocompatible
+" autocomplete command menu
+set wildmenu
+set wildmode=longest,list,full
+" tab width in spaces
+set tabstop=4
+" use spaces instead of tabs
+set expandtab
+" auto wrap lines
+set formatoptions=jcroql
+set textwidth=80
+" disable swap files and backup
+set nobackup noswapfile nowritebackup autoread
+" autoindent next line
+set autoindent
+" show line numbers
+set number
+" highlight current line
+set cursorline
+" redraw the screen only when necessary
+set lazyredraw
+" search as characters are entered
+set incsearch
+" highlight search matches
+set hlsearch
+" reduce the updatetime to 250ms
+set updatetime=250
+" add right margin
+"set colorcolumn=80
+" enable mouse interaction
+set mouse=a
+" disable line wrapping
+set nowrap
+" make a nice 80-column setup
+"let &colorcolumn=join(range(81,999), ",")
+" highlight past 80-column
+"let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+"match ErrorMsg '\%>80v.\+'
+" always show 10 lines around the cursor
+set scrolloff=10
+" more natural splitting
+set splitbelow
+set splitright
+" split bar character
+set fillchars+=vert:\ 
+
+" switch assembly syntax to use nasm syntax
+" instead of AT&T syntax
+au BufRead,BufNewFile *.asm set filetype=nasm
+
+" custom status
+set laststatus=2
+set statusline=\ %t
+set statusline+=%{&readonly?'\ ':!&modifiable?'\ ':''}
+set statusline+=%{&modified?'\ \ [+]':''}
+set statusline+=%=
+set statusline+=%-14.(%l:%c%V%)
+set statusline+=\ %{&filetype!=#''?&filetype:'none'}
+set statusline+=\ %4p%%\ 
+hi StatusLine   ctermbg=black   ctermfg=white
+hi StatusLineNC ctermbg=black   ctermfg=gray
