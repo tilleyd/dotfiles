@@ -22,10 +22,6 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 
--- Load Debian menu entries
-local debian = require("debian.menu")
-local has_fdo, freedesktop = pcall(require, "freedesktop")
-
 local scripts_path = "/home/tilleyd/.config/awesome/scripts/"
 
 -- Require the external widget functions
@@ -34,7 +30,6 @@ local widgets = {
     cpu = require("widgets/cpu"),
     volume = require("widgets/volume"),
     ram = require("widgets/ram"),
-    brightness = require("widgets/brightness"),
 }
 
 -- {{{ Error handling
@@ -67,7 +62,7 @@ end
 beautiful.init("~/.config/awesome/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "x-terminal-emulator"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -112,23 +107,7 @@ myawesomemenu = {
 local menu_awesome = { "awesome", myawesomemenu, beautiful.awesome_icon }
 local menu_terminal = { "open terminal", terminal }
 
-if has_fdo then
-    mymainmenu = freedesktop.menu.build({
-        before = { menu_awesome },
-        after =  { menu_terminal }
-    })
-else
-    mymainmenu = awful.menu({
-        items = {
-                  menu_awesome,
-                  { "Debian", debian.menu.Debian_menu.Debian },
-                  menu_terminal,
-                }
-    })
-end
-
-mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-                                     menu = mymainmenu })
+mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon })
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -196,17 +175,17 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Create the tags for each screen
-    local tags = {"dev", "web", "doc", "chat", "mus", "srv", "gfx", "vid", "misc"}
+    local tags = {" ● ", " ● ", " ● ", " ● ", " ● ", " ● ", " ● ", " ● ", " ● "}
     local layouts = {
         awful.layout.suit.tile,
         awful.layout.suit.tile,
         awful.layout.suit.tile,
-        awful.layout.suit.floating,
-        awful.layout.suit.floating,
-        awful.layout.suit.fair,
-        awful.layout.suit.floating,
-        awful.layout.suit.floating,
-        awful.layout.suit.floating,
+        awful.layout.suit.tile,
+        awful.layout.suit.tile,
+        awful.layout.suit.tile,
+        awful.layout.suit.tile,
+        awful.layout.suit.tile,
+        awful.layout.suit.tile,
     }
 
     -- Each screen has its own tag table.
@@ -238,25 +217,8 @@ awful.screen.connect_for_each_screen(function(s)
         buttons = tasklist_buttons
     }
 
-    -- Create a brightness indicator widget
-    --[[local brightness = wibox.widget {
-        widget        = wibox.widget.slider,
-        value         = 50,
-        forced_width  = 128,
-        bar_shape     = gears.shape.rounded_bar,
-        bar_height    = 3,
-        bar_color     = "#fffffe",
-    }]]
-
-    --local brightness = awful.widget.watch(scripts_path .. "backlight.sh", 2)
-    --brightness = wibox.container.margin(brightness, 6, 6)
-    --brightness = wibox.container.background(brightness, "#ff0000")
-
     local primwidgets = nil
     if s == screen.primary then
-        -- Create brightness widget
-        local brightness = widgets.brightness()
-
         -- Create RAM widget
         local ram = widgets.ram()
 
@@ -277,7 +239,6 @@ awful.screen.connect_for_each_screen(function(s)
             layout = wibox.layout.fixed.horizontal,
             ram,
             cpu,
-            brightness,
             volume,
             clock,
             systray,
@@ -399,7 +360,7 @@ globalkeys = gears.table.join(
         {modkey},
         "c",
         function()
-            awful.spawn("thunar")
+            awful.spawn("caja")
         end,
         {description = "file explorer", group = "application"}
     ),
@@ -415,9 +376,9 @@ globalkeys = gears.table.join(
         {modkey},
         "t",
         function()
-            awful.spawn("alacritty -e vim")
+            awful.spawn("kitty -e nvim")
         end,
-        {description = "vim", group = "application"}
+        {description = "nvim", group = "application"}
     ),
 
     -- Media keys
@@ -438,18 +399,6 @@ globalkeys = gears.table.join(
         "XF86AudioMute",
         function() widgets.volume:toggle() end,
         {description = "mute volume", group = "media"}
-    ),
-    awful.key(
-        {},
-        "XF86MonBrightnessUp",
-        function() widgets.brightness:inc(5) end,
-        {description = "increase brightness", group = "media"}
-    ),
-    awful.key(
-        {},
-        "XF86MonBrightnessDown",
-        function() widgets.brightness:dec(5) end,
-        {description = "decrease brightness", group = "media"}
     ),
     awful.key(
         {},

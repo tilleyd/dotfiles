@@ -1,4 +1,4 @@
--- Awesome WM volume widget
+-- Awesome WM volume widget for PipeWire/WirePlumber
 -- Author: tilleyd
 -- Based on Pavel Mahov's widget from
 -- https://github.com/streetturtle/awesome-wm-widgets/tree/master/volume-widget
@@ -10,10 +10,12 @@ local gears = require("gears")
 local beautiful = require("beautiful")
 local watch = require("awful.widget.watch")
 
-local GET_VOLUME_CMD = 'amixer -D pulse sget Master'
-local INC_VOLUME_CMD = 'amixer -D pulse sset Master 5%+'
-local DEC_VOLUME_CMD = 'amixer -D pulse sset Master 5%-'
-local TOG_VOLUME_CMD = 'amixer -D pulse sset Master toggle'
+local GET_VOLUME_CMD = 'wpctl get-volume @DEFAULT_AUDIO_SINK@'
+local INC_VOLUME_CMD = 'wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+'
+local DEC_VOLUME_CMD = 'wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-'
+local TOG_VOLUME_CMD = 'wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle'
+local MIXER_CMD = 'pwvucontrol'
+
 local ICON_DIR = os.getenv("HOME") .. '/.config/awesome/icons/widgets/'
 
 local volume = {}
@@ -22,7 +24,6 @@ local function worker(user_args)
 
     local args = user_args or {}
 
-    local mixer_cmd = args.mixer_cmd or 'pavucontrol'
     local widget_type = args.widget_type
     local refresh_rate = args.refresh_rate or 1
     local icon_dir = args.icon_dir or ICON_DIR
@@ -86,14 +87,16 @@ local function worker(user_args)
 
     local function update_widget(widget, stdout)
         local mute = string.match(stdout, "%[(o%D%D?)%]")   -- \[(o\D\D?)\] - [on] or [off]
-        if mute == 'off' then
+        if string.match(stdout, "%[MUTED%]") then
             widget:mute()
-        elseif mute == 'on' then
+        else
             widget:unmute()
         end
 
-        local volume_level = string.match(stdout, "(%d?%d?%d)%%") -- (\d?\d?\d)\%)
-        widget:set_volume(tonumber(volume_level))
+        local volume_level = tonumber(string.match(stdout, "%d.%d%d"))
+        if volume_level ~= nil then
+            widget:set_volume(volume_level * 100)
+        end
     end
 
     function volume:inc()
@@ -109,8 +112,8 @@ local function worker(user_args)
     end
 
     function volume:mixer()
-        if mixer_cmd then
-            spawn.easy_async(mixer_cmd)
+        if MIXER_CMD then
+            spawn.easy_async(MIXER_CMD)
         end
     end
 
